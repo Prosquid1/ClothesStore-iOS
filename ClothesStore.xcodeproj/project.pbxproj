@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		EAB56D0E24B72CD3006A8225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */; };
-		EAB56D1024B72CD3006A8225 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D0F24B72CD3006A8225 /* SceneDelegate.swift */; };
 		EAB56D1224B72CD3006A8225 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D1124B72CD3006A8225 /* ViewController.swift */; };
 		EAB56D1524B72CD3006A8225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1324B72CD3006A8225 /* Main.storyboard */; };
 		EAB56D1724B72CD4006A8225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1624B72CD4006A8225 /* Assets.xcassets */; };
 		EAB56D1A24B72CD4006A8225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1824B72CD4006A8225 /* LaunchScreen.storyboard */; };
 		EAB56D2524B72CD5006A8225 /* ClothesStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D2424B72CD5006A8225 /* ClothesStoreTests.swift */; };
 		EAB56D3024B72CD5006A8225 /* ClothesStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D2F24B72CD5006A8225 /* ClothesStoreUITests.swift */; };
+		EAB56D3F24B99FD6006A8225 /* ProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D3E24B99FD6006A8225 /* ProductView.xib */; };
+		EAB56D4124B9A034006A8225 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4024B9A034006A8225 /* ProductView.swift */; };
+		EAB56D4324B9A04B006A8225 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4224B9A04B006A8225 /* Product.swift */; };
+		EAB56D4624B9A0E1006A8225 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4524B9A0E1006A8225 /* CartItem.swift */; };
+		EAB56D4824B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4724B9A0F7006A8225 /* CartItemsToProduct.swift */; };
+		EAB56D4924B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4724B9A0F7006A8225 /* CartItemsToProduct.swift */; };
+		EAB56D4A24B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4724B9A0F7006A8225 /* CartItemsToProduct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +43,6 @@
 /* Begin PBXFileReference section */
 		EAB56D0A24B72CD3006A8225 /* ClothesStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClothesStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EAB56D0F24B72CD3006A8225 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EAB56D1124B72CD3006A8225 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EAB56D1424B72CD3006A8225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAB56D1624B72CD4006A8225 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +54,11 @@
 		EAB56D2B24B72CD5006A8225 /* ClothesStoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClothesStoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB56D2F24B72CD5006A8225 /* ClothesStoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesStoreUITests.swift; sourceTree = "<group>"; };
 		EAB56D3124B72CD5006A8225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAB56D3E24B99FD6006A8225 /* ProductView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductView.xib; sourceTree = "<group>"; };
+		EAB56D4024B9A034006A8225 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		EAB56D4224B9A04B006A8225 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		EAB56D4524B9A0E1006A8225 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
+		EAB56D4724B9A0F7006A8225 /* CartItemsToProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemsToProduct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +109,9 @@
 		EAB56D0C24B72CD3006A8225 /* ClothesStore */ = {
 			isa = PBXGroup;
 			children = (
+				EAB56D4424B9A0D5006A8225 /* Cart */,
+				EAB56D3D24B99FC1006A8225 /* Product */,
 				EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */,
-				EAB56D0F24B72CD3006A8225 /* SceneDelegate.swift */,
 				EAB56D1124B72CD3006A8225 /* ViewController.swift */,
 				EAB56D1324B72CD3006A8225 /* Main.storyboard */,
 				EAB56D1624B72CD4006A8225 /* Assets.xcassets */,
@@ -126,6 +137,25 @@
 				EAB56D3124B72CD5006A8225 /* Info.plist */,
 			);
 			path = ClothesStoreUITests;
+			sourceTree = "<group>";
+		};
+		EAB56D3D24B99FC1006A8225 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				EAB56D3E24B99FD6006A8225 /* ProductView.xib */,
+				EAB56D4024B9A034006A8225 /* ProductView.swift */,
+				EAB56D4224B9A04B006A8225 /* Product.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		EAB56D4424B9A0D5006A8225 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				EAB56D4524B9A0E1006A8225 /* CartItem.swift */,
+				EAB56D4724B9A0F7006A8225 /* CartItemsToProduct.swift */,
+			);
+			path = Cart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB56D3F24B99FD6006A8225 /* ProductView.xib in Resources */,
 				EAB56D1A24B72CD4006A8225 /* LaunchScreen.storyboard in Resources */,
 				EAB56D1724B72CD4006A8225 /* Assets.xcassets in Resources */,
 				EAB56D1524B72CD3006A8225 /* Main.storyboard in Resources */,
@@ -260,8 +291,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB56D1224B72CD3006A8225 /* ViewController.swift in Sources */,
+				EAB56D4324B9A04B006A8225 /* Product.swift in Sources */,
+				EAB56D4124B9A034006A8225 /* ProductView.swift in Sources */,
+				EAB56D4624B9A0E1006A8225 /* CartItem.swift in Sources */,
 				EAB56D0E24B72CD3006A8225 /* AppDelegate.swift in Sources */,
-				EAB56D1024B72CD3006A8225 /* SceneDelegate.swift in Sources */,
+				EAB56D4824B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB56D2524B72CD5006A8225 /* ClothesStoreTests.swift in Sources */,
+				EAB56D4924B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB56D3024B72CD5006A8225 /* ClothesStoreUITests.swift in Sources */,
+				EAB56D4A24B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
