@@ -20,15 +20,21 @@
 		EAB56D4824B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4724B9A0F7006A8225 /* CartItemsToProduct.swift */; };
 		EAB56D4924B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4724B9A0F7006A8225 /* CartItemsToProduct.swift */; };
 		EAB56D4A24B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4724B9A0F7006A8225 /* CartItemsToProduct.swift */; };
-		EAB56D4C24B9A3D7006A8225 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4B24B9A3D7006A8225 /* ProductTableViewCell.swift */; };
-		EAB56D4D24B9A3D7006A8225 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4B24B9A3D7006A8225 /* ProductTableViewCell.swift */; };
-		EAB56D4E24B9A3D7006A8225 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4B24B9A3D7006A8225 /* ProductTableViewCell.swift */; };
+		EAB56D4C24B9A3D7006A8225 /* ClothesStoreItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4B24B9A3D7006A8225 /* ClothesStoreItemCell.swift */; };
+		EAB56D4D24B9A3D7006A8225 /* ClothesStoreItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4B24B9A3D7006A8225 /* ClothesStoreItemCell.swift */; };
+		EAB56D4E24B9A3D7006A8225 /* ClothesStoreItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4B24B9A3D7006A8225 /* ClothesStoreItemCell.swift */; };
 		EAB56D5024B9A4F9006A8225 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4F24B9A4F9006A8225 /* Extensions.swift */; };
 		EAB56D5124B9A4F9006A8225 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4F24B9A4F9006A8225 /* Extensions.swift */; };
 		EAB56D5224B9A4F9006A8225 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D4F24B9A4F9006A8225 /* Extensions.swift */; };
 		EAB56D5424B9AD9A006A8225 /* CartAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D5324B9AD9A006A8225 /* CartAccessoryView.xib */; };
 		EAB56D5524B9AD9A006A8225 /* CartAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D5324B9AD9A006A8225 /* CartAccessoryView.xib */; };
 		EAB56D5624B9AD9A006A8225 /* CartAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D5324B9AD9A006A8225 /* CartAccessoryView.xib */; };
+		EAB56D5A24B9B427006A8225 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D5924B9B427006A8225 /* ColorUtils.swift */; };
+		EAB56D5B24B9B427006A8225 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D5924B9B427006A8225 /* ColorUtils.swift */; };
+		EAB56D5C24B9B427006A8225 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D5924B9B427006A8225 /* ColorUtils.swift */; };
+		EAB56D5E24B9D699006A8225 /* CartAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D5D24B9D699006A8225 /* CartAccessoryView.swift */; };
+		EAB56D5F24B9D699006A8225 /* CartAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D5D24B9D699006A8225 /* CartAccessoryView.swift */; };
+		EAB56D6024B9D699006A8225 /* CartAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D5D24B9D699006A8225 /* CartAccessoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +72,11 @@
 		EAB56D4224B9A04B006A8225 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		EAB56D4524B9A0E1006A8225 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		EAB56D4724B9A0F7006A8225 /* CartItemsToProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemsToProduct.swift; sourceTree = "<group>"; };
-		EAB56D4B24B9A3D7006A8225 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		EAB56D4B24B9A3D7006A8225 /* ClothesStoreItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesStoreItemCell.swift; sourceTree = "<group>"; };
 		EAB56D4F24B9A4F9006A8225 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EAB56D5324B9AD9A006A8225 /* CartAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartAccessoryView.xib; sourceTree = "<group>"; };
+		EAB56D5924B9B427006A8225 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		EAB56D5D24B9D699006A8225 /* CartAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartAccessoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +127,8 @@
 		EAB56D0C24B72CD3006A8225 /* ClothesStore */ = {
 			isa = PBXGroup;
 			children = (
+				EAB56D6124B9E03A006A8225 /* Generic */,
+				EAB56D5824B9B419006A8225 /* Helpers */,
 				EAB56D4424B9A0D5006A8225 /* Cart */,
 				EAB56D3D24B99FC1006A8225 /* Product */,
 				EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */,
@@ -155,7 +165,6 @@
 			children = (
 				EAB56D3E24B99FD6006A8225 /* ProductCell.xib */,
 				EAB56D4224B9A04B006A8225 /* Product.swift */,
-				EAB56D4B24B9A3D7006A8225 /* ProductTableViewCell.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -166,8 +175,25 @@
 				EAB56D4524B9A0E1006A8225 /* CartItem.swift */,
 				EAB56D4724B9A0F7006A8225 /* CartItemsToProduct.swift */,
 				EAB56D5324B9AD9A006A8225 /* CartAccessoryView.xib */,
+				EAB56D5D24B9D699006A8225 /* CartAccessoryView.swift */,
 			);
 			path = Cart;
+			sourceTree = "<group>";
+		};
+		EAB56D5824B9B419006A8225 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EAB56D5924B9B427006A8225 /* ColorUtils.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EAB56D6124B9E03A006A8225 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				EAB56D4B24B9A3D7006A8225 /* ClothesStoreItemCell.swift */,
+			);
+			path = Generic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,8 +332,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB56D1224B72CD3006A8225 /* ViewController.swift in Sources */,
+				EAB56D5E24B9D699006A8225 /* CartAccessoryView.swift in Sources */,
 				EAB56D4324B9A04B006A8225 /* Product.swift in Sources */,
-				EAB56D4C24B9A3D7006A8225 /* ProductTableViewCell.swift in Sources */,
+				EAB56D4C24B9A3D7006A8225 /* ClothesStoreItemCell.swift in Sources */,
+				EAB56D5A24B9B427006A8225 /* ColorUtils.swift in Sources */,
 				EAB56D5024B9A4F9006A8225 /* Extensions.swift in Sources */,
 				EAB56D4624B9A0E1006A8225 /* CartItem.swift in Sources */,
 				EAB56D0E24B72CD3006A8225 /* AppDelegate.swift in Sources */,
@@ -320,8 +348,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB56D2524B72CD5006A8225 /* ClothesStoreTests.swift in Sources */,
+				EAB56D5F24B9D699006A8225 /* CartAccessoryView.swift in Sources */,
+				EAB56D5B24B9B427006A8225 /* ColorUtils.swift in Sources */,
 				EAB56D4924B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */,
-				EAB56D4D24B9A3D7006A8225 /* ProductTableViewCell.swift in Sources */,
+				EAB56D4D24B9A3D7006A8225 /* ClothesStoreItemCell.swift in Sources */,
 				EAB56D5124B9A4F9006A8225 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,8 +361,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB56D3024B72CD5006A8225 /* ClothesStoreUITests.swift in Sources */,
+				EAB56D6024B9D699006A8225 /* CartAccessoryView.swift in Sources */,
+				EAB56D5C24B9B427006A8225 /* ColorUtils.swift in Sources */,
 				EAB56D4A24B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */,
-				EAB56D4E24B9A3D7006A8225 /* ProductTableViewCell.swift in Sources */,
+				EAB56D4E24B9A3D7006A8225 /* ClothesStoreItemCell.swift in Sources */,
 				EAB56D5224B9A4F9006A8225 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
