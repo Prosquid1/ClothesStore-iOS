@@ -6,8 +6,6 @@
 //  Copyright © 2020 Personal. All rights reserved.
 //
 
-import Foundation
-
 class CartItem: Codable {
     var id: Int?
     var productId: Int

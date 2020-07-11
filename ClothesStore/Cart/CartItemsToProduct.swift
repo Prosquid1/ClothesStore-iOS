@@ -6,8 +6,6 @@
 //  Copyright © 2020 Personal. All rights reserved.
 //
 
-import Foundation
-
 class CartItemsToProduct: Codable {
     var cartItemIds: Array<Int>
     var product: Product
