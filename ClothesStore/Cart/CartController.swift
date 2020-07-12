@@ -14,23 +14,13 @@ class CartController: BaseViewController {
 
     let cartFooter = UIView()
 
-    private var selectedCalendarQueryDate: Date?
-
-    override func viewDidAppear(_ animated: Bool) {
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        setNeedsStatusBarAppearanceUpdate()
-        self.tabBarController?.tabBar.isHidden = false
-    }
-
     private func retreiveCart() {
         cartPresenter.retrieveData()
     }
 
     override func viewDidLoad() {
         title = "Cart"
-        navigationController?.setNavigationBarHidden(true, animated: false)
-
+        self.tabBarController?.title = "My Cart"
         cartPresenter = DataSourcePresenter(dataControllerDelegate: self)
         super.viewDidLoad()
         configureTableView()
