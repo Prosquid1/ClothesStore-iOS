@@ -9,5 +9,4 @@
 class CartItemsToProduct: Codable {
     var cartItemIds: Array<Int>
     var product: Product
-    
 }
