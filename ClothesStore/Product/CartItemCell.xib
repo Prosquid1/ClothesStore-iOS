@@ -17,11 +17,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZw-hA-tOx" customClass="GenericProductView" customModule="ClothesStore" customModuleProvider="target">
-                        <rect key="frame" x="20" y="0.0" width="561" height="474"/>
+                        <rect key="frame" x="0.0" y="0.0" width="591" height="474"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="znj-3a-F0T">
-                        <rect key="frame" x="601" y="210" width="40" height="54"/>
+                        <rect key="frame" x="611" y="210" width="40" height="54"/>
                         <subviews>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0H-8K-ldj" customClass="FaveButton" customModule="FaveButton">
                                 <rect key="frame" x="9" y="0.0" width="22" height="22"/>
@@ -63,12 +63,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="hZw-hA-tOx" firstAttribute="centerY" secondItem="wFo-kg-fZb" secondAttribute="centerY" id="9wh-AA-ek9"/>
-                    <constraint firstAttribute="trailing" secondItem="znj-3a-F0T" secondAttribute="trailing" constant="20" id="JLc-b6-KWx"/>
+                    <constraint firstAttribute="trailing" secondItem="znj-3a-F0T" secondAttribute="trailing" constant="10" id="JLc-b6-KWx"/>
                     <constraint firstAttribute="bottom" secondItem="hZw-hA-tOx" secondAttribute="bottom" id="L6Q-uJ-Pmr"/>
                     <constraint firstItem="hZw-hA-tOx" firstAttribute="top" secondItem="wFo-kg-fZb" secondAttribute="top" id="OEJ-FG-qYh"/>
                     <constraint firstItem="znj-3a-F0T" firstAttribute="leading" secondItem="hZw-hA-tOx" secondAttribute="trailing" constant="20" id="Psu-nB-3R4"/>
                     <constraint firstItem="znj-3a-F0T" firstAttribute="centerY" secondItem="wFo-kg-fZb" secondAttribute="centerY" id="dHb-oz-UNH"/>
-                    <constraint firstItem="hZw-hA-tOx" firstAttribute="leading" secondItem="wFo-kg-fZb" secondAttribute="leading" constant="20" id="xoL-GT-6kH"/>
+                    <constraint firstItem="hZw-hA-tOx" firstAttribute="leading" secondItem="wFo-kg-fZb" secondAttribute="leading" id="xoL-GT-6kH"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

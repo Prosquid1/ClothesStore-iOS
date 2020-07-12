@@ -10,12 +10,12 @@ import UIKit
 
 class GenericProductView: UIView {
     @IBOutlet weak var productSoldOutText: UILabel!
-
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productCategoryLabel: UILabel!
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var productOldPriceLabel: UILabel!
     @IBOutlet weak var productStockCountLabel: UILabel!
+    @IBOutlet weak var stockToPriceLabelsXt: NSLayoutConstraint!
 
     @IBOutlet weak var productImageUIView: UIView!
 
@@ -37,6 +37,11 @@ class GenericProductView: UIView {
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin, .flexibleTopMargin]
         contentView.translatesAutoresizingMaskIntoConstraints = true
+
+        let stretchingView = UIView()
+        stretchingView.setContentHuggingPriority(UILayoutPriority(rawValue: 1), for: .horizontal)
+        stretchingView.backgroundColor = .clear
+        stretchingView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(contentView)
     }
 

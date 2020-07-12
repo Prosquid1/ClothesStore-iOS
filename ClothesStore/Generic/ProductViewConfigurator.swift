@@ -20,27 +20,25 @@ class ProductViewConfigurator {
 
         configureProductImageWithName(name: product.name, genericProductView.productImageUIView)
         configureSoldOutText(product.stock == 0, soldOutLabel: genericProductView.productSoldOutText)
-        configureProductOldPrice(product.oldPrice, oldPriceLabel: genericProductView.productOldPriceLabel)
+        configureProductOldPrice(product.oldPrice,
+                                 oldPriceLabel: genericProductView.productOldPriceLabel, spacingConstraint: genericProductView.stockToPriceLabelsXt)
     }
 
     private static func configureProductImageWithName(name: String, _ view: UIView) {
         view.backgroundColor = ColorUtils.generateColorFromText(string: name)
     }
 
-    private static func configureProductOldPrice(_ oldPrice: String?, oldPriceLabel: UILabel) {
-        if (oldPrice == nil) {
-            oldPriceLabel.isHidden = true
-            return
-        }
-        oldPriceLabel.isHidden = false
-        oldPriceLabel.attributedText = oldPrice?.strikeThrough()
+    private static func configureProductOldPrice(_ oldPrice: String?, oldPriceLabel: UILabel, spacingConstraint: NSLayoutConstraint) {
+        oldPriceLabel.isHidden = oldPrice == nil
+        spacingConstraint.constant = oldPrice == nil ? 0.0 : 5.0
+        oldPriceLabel.attributedText = oldPrice == nil ? nil : oldPrice?.strikeThrough()
     }
 
     private static func configureSoldOutText(_ productIsSoldOut: Bool, soldOutLabel: UILabel) {
-        soldOutLabel.isHidden = productIsSoldOut
+        soldOutLabel.isHidden = !productIsSoldOut
         if (!productIsSoldOut) {
             return
         }
-        soldOutLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 1.5)
+        soldOutLabel.rotate(degrees: 315.0)
     }
 }
