@@ -29,7 +29,7 @@ struct ColorPalette {
 
 extension UIColor {
 
-    convenience init(fromHex rgbValue: UInt) {
+    convenience init(fromHex rgbValue: UInt, alpha: CGFloat? = 1.0) {
         self.init(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
