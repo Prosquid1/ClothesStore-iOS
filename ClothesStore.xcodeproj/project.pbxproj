@@ -205,10 +205,10 @@
 			children = (
 				EA332F4324BA729B00ABA49A /* AnimatedTabBarController.swift */,
 				EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */,
+				EAB56D4424B9A0D5006A8225 /* Cart */,
 				EA332F7124BB0B9E00ABA49A /* Extensions */,
 				EAB56D6124B9E03A006A8225 /* Generic */,
 				EAB56D5824B9B419006A8225 /* Helpers */,
-				EAB56D4424B9A0D5006A8225 /* Cart */,
 				EAB56D3D24B99FC1006A8225 /* Product */,
 				EAB56D1324B72CD3006A8225 /* Main.storyboard */,
 				EAB56D1824B72CD4006A8225 /* LaunchScreen.storyboard */,
