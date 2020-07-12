@@ -6,6 +6,9 @@ target 'ClothesStore' do
   use_frameworks!
   # Pods for ClothesStore
   pod 'Alamofire'
-  pod 'NVActivityIndicatorView'
   pod 'FaveButton'
+  pod 'NVActivityIndicatorView'
+  pod 'SwiftEntryKit'
+  pod 'SwiftyJSON'  
+  pod 'ViewAnimator'
 end
