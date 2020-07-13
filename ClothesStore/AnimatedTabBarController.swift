@@ -25,19 +25,13 @@ class AnimatedTabBarController: UITabBarController {
     }
 
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if let view = item.value(forKey: "view") as? UIView, let image = view.subviews.first as? UIImageView {
+        guard let barItemView = item.value(forKey: "view") as? UIView else { return }
 
-            //animating tab bar image
-            let expandTransform = CGAffineTransform(scaleX: 0.84, y: 0.84);
-            image.transform = expandTransform
-            UIView.animate(withDuration: 0.7,
-                           delay:0.0,
-                           usingSpringWithDamping:0.40,
-                           initialSpringVelocity:0.1,
-                           options: .curveEaseOut,
-                           animations: {
-                            image.transform = expandTransform.inverted()
-            }, completion: nil)
+        let timeInterval: TimeInterval = 0.3
+        let propertyAnimator = UIViewPropertyAnimator(duration: timeInterval, dampingRatio: 0.5) {
+            barItemView.transform = CGAffineTransform.identity.scaledBy(x: 0.7, y: 0.7)
         }
+        propertyAnimator.addAnimations({ barItemView.transform = .identity }, delayFactor: CGFloat(timeInterval))
+        propertyAnimator.startAnimation()
     }
 }
