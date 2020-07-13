@@ -25,6 +25,8 @@ struct ColorPalette {
     static let moneyBlue: UIColor = UIColor(fromHex: 0x2e85f6)
     static let red: UIColor = UIColor(fromHex: 0xF44336)
     static let white: UIColor = UIColor(fromHex: 0xFFFFFF)
+
+    static let tableSeparator: UIColor = UIColor(fromHex: 0x795548, alpha: 0.33)
 }
 
 extension UIColor {
