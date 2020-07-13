@@ -15,8 +15,6 @@
 		EA332F3524BA6E6200ABA49A /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F3324BA6E6200ABA49A /* ColorPalette.swift */; };
 		EA332F3624BA6E6200ABA49A /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F3324BA6E6200ABA49A /* ColorPalette.swift */; };
 		EA332F3824BA6EA900ABA49A /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F3724BA6EA900ABA49A /* CartController.swift */; };
-		EA332F3924BA6EA900ABA49A /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F3724BA6EA900ABA49A /* CartController.swift */; };
-		EA332F3A24BA6EA900ABA49A /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F3724BA6EA900ABA49A /* CartController.swift */; };
 		EA332F4024BA6F4700ABA49A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F3F24BA6F4700ABA49A /* BaseViewController.swift */; };
 		EA332F4124BA6F4700ABA49A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F3F24BA6F4700ABA49A /* BaseViewController.swift */; };
 		EA332F4224BA6F4700ABA49A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F3F24BA6F4700ABA49A /* BaseViewController.swift */; };
@@ -52,6 +50,9 @@
 		EA332F7824BB108600ABA49A /* GenericViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F7624BB108600ABA49A /* GenericViewConfigurator.swift */; };
 		EA332F7924BB108600ABA49A /* GenericViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F7624BB108600ABA49A /* GenericViewConfigurator.swift */; };
 		EA332F7B24BC94C600ABA49A /* StockCountHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F7A24BC94C600ABA49A /* StockCountHelper.swift */; };
+		EA332F8624BCA22400ABA49A /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8524BCA22400ABA49A /* HomeController.swift */; };
+		EA332F8724BCA22400ABA49A /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8524BCA22400ABA49A /* HomeController.swift */; };
+		EA332F8824BCA22400ABA49A /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8524BCA22400ABA49A /* HomeController.swift */; };
 		EAB56D0E24B72CD3006A8225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */; };
 		EAB56D1524B72CD3006A8225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1324B72CD3006A8225 /* Main.storyboard */; };
 		EAB56D1724B72CD4006A8225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1624B72CD4006A8225 /* Assets.xcassets */; };
@@ -103,11 +104,12 @@
 		EA332F5924BA8B9C00ABA49A /* ServerSecrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSecrets.swift; sourceTree = "<group>"; };
 		EA332F5D24BAAD3800ABA49A /* GenericProductView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenericProductView.xib; sourceTree = "<group>"; };
 		EA332F6124BAADD900ABA49A /* GenericProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericProductView.swift; sourceTree = "<group>"; };
-		EA332F6924BAB86600ABA49A /* ProductItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductItemCell.xib; path = ClothesStore/Product/ProductItemCell.xib; sourceTree = SOURCE_ROOT; };
+		EA332F6924BAB86600ABA49A /* ProductItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductItemCell.xib; path = ClothesStore/Generic/ProductItemCell.xib; sourceTree = SOURCE_ROOT; };
 		EA332F6D24BB07D500ABA49A /* UIViewController+EntryKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+EntryKit.swift"; sourceTree = "<group>"; };
 		EA332F7224BB0FDF00ABA49A /* AnimationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUtils.swift; sourceTree = "<group>"; };
 		EA332F7624BB108600ABA49A /* GenericViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewConfigurator.swift; sourceTree = "<group>"; };
 		EA332F7A24BC94C600ABA49A /* StockCountHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCountHelper.swift; sourceTree = "<group>"; };
+		EA332F8524BCA22400ABA49A /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		EAB56D0A24B72CD3006A8225 /* ClothesStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClothesStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAB56D1424B72CD3006A8225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,6 +182,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		EA332F8424BCA1F600ABA49A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EA332F8524BCA22400ABA49A /* HomeController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		EAB56D0124B72CD3006A8225 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +215,7 @@
 		EAB56D0C24B72CD3006A8225 /* ClothesStore */ = {
 			isa = PBXGroup;
 			children = (
+				EA332F8424BCA1F600ABA49A /* Home */,
 				EA332F4324BA729B00ABA49A /* AnimatedTabBarController.swift */,
 				EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */,
 				EAB56D4424B9A0D5006A8225 /* Cart */,
@@ -249,11 +260,9 @@
 		EAB56D4424B9A0D5006A8225 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
-				EA332F6924BAB86600ABA49A /* ProductItemCell.xib */,
 				EA332F3724BA6EA900ABA49A /* CartController.swift */,
 				EAB56D4524B9A0E1006A8225 /* CartItem.swift */,
 				EAB56D4724B9A0F7006A8225 /* CartItemsToProduct.swift */,
-				EA332F5524BA87AC00ABA49A /* ProductItemCell.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -274,6 +283,8 @@
 		EAB56D6124B9E03A006A8225 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				EA332F5524BA87AC00ABA49A /* ProductItemCell.swift */,
+				EA332F6924BAB86600ABA49A /* ProductItemCell.xib */,
 				EA332F3F24BA6F4700ABA49A /* BaseViewController.swift */,
 				EA332F4D24BA813100ABA49A /* DataSourcePresenter.swift */,
 				EA332F5D24BAAD3800ABA49A /* GenericProductView.xib */,
@@ -466,6 +477,7 @@
 			files = (
 				EAB56D4324B9A04B006A8225 /* Product.swift in Sources */,
 				EAB56D5A24B9B427006A8225 /* ColorUtils.swift in Sources */,
+				EA332F8624BCA22400ABA49A /* HomeController.swift in Sources */,
 				EA332F4024BA6F4700ABA49A /* BaseViewController.swift in Sources */,
 				EA332F7724BB108600ABA49A /* GenericViewConfigurator.swift in Sources */,
 				EAB56D5024B9A4F9006A8225 /* String+Extensions.swift in Sources */,
@@ -493,7 +505,6 @@
 			files = (
 				EA332F7424BB0FDF00ABA49A /* AnimationUtils.swift in Sources */,
 				EA332F6F24BB07D500ABA49A /* UIViewController+EntryKit.swift in Sources */,
-				EA332F3924BA6EA900ABA49A /* CartController.swift in Sources */,
 				EA332F2D24BA6E1400ABA49A /* RESTHelper.swift in Sources */,
 				EAB56D2524B72CD5006A8225 /* ClothesStoreTests.swift in Sources */,
 				EA332F3524BA6E6200ABA49A /* ColorPalette.swift in Sources */,
@@ -504,6 +515,7 @@
 				EAB56D5B24B9B427006A8225 /* ColorUtils.swift in Sources */,
 				EAB56D4924B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */,
 				EA332F5B24BA8B9C00ABA49A /* ServerSecrets.swift in Sources */,
+				EA332F8724BCA22400ABA49A /* HomeController.swift in Sources */,
 				EA332F5724BA87AC00ABA49A /* ProductItemCell.swift in Sources */,
 				EA332F4524BA729B00ABA49A /* AnimatedTabBarController.swift in Sources */,
 				EAB56D5124B9A4F9006A8225 /* String+Extensions.swift in Sources */,
@@ -516,7 +528,6 @@
 			files = (
 				EA332F7524BB0FDF00ABA49A /* AnimationUtils.swift in Sources */,
 				EA332F7024BB07D500ABA49A /* UIViewController+EntryKit.swift in Sources */,
-				EA332F3A24BA6EA900ABA49A /* CartController.swift in Sources */,
 				EA332F2E24BA6E1400ABA49A /* RESTHelper.swift in Sources */,
 				EAB56D3024B72CD5006A8225 /* ClothesStoreUITests.swift in Sources */,
 				EA332F3624BA6E6200ABA49A /* ColorPalette.swift in Sources */,
@@ -527,6 +538,7 @@
 				EAB56D5C24B9B427006A8225 /* ColorUtils.swift in Sources */,
 				EAB56D4A24B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */,
 				EA332F5C24BA8B9C00ABA49A /* ServerSecrets.swift in Sources */,
+				EA332F8824BCA22400ABA49A /* HomeController.swift in Sources */,
 				EA332F5824BA87AC00ABA49A /* ProductItemCell.swift in Sources */,
 				EA332F4624BA729B00ABA49A /* AnimatedTabBarController.swift in Sources */,
 				EAB56D5224B9A4F9006A8225 /* String+Extensions.swift in Sources */,

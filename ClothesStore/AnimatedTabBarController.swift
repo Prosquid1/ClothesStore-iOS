@@ -12,13 +12,13 @@ class AnimatedTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let vc1: UIViewController = CartController()
+        let vc1: UIViewController = HomeController()
         vc1.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.fill"), tag: 0)
 
         let vc2: UIViewController = UIViewController()
         vc2.tabBarItem = UITabBarItem(title: "My Wishlist", image: UIImage(systemName: "star.fill"), tag: 1)
 
-        let vc3: UIViewController = UIViewController()
+        let vc3: UIViewController = CartController()
         vc3.tabBarItem = UITabBarItem(title: "My Cart", image: UIImage(systemName: "cart"), tag: 2)
 
         viewControllers = [vc1, vc2, vc3]

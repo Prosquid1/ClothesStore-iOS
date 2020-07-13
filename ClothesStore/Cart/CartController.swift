@@ -15,15 +15,16 @@ class CartController: BaseViewController {
     let cartFooter = UIView()
 
     private func retreiveCart() {
-        cartPresenter.retrieveData()
+        cartPresenter.retrieveData(path: "cart")
     }
 
     override func viewDidLoad() {
+
         self.tabBarController?.title = "My Cart"
         cartPresenter = DataSourcePresenter(dataControllerDelegate: self)
         super.viewDidLoad()
         configureTableView()
-        cartPresenter.retrieveData()
+        retreiveCart()
     }
 
     private func configureFooterView() {
@@ -69,7 +70,7 @@ extension CartController {
         UIView.animate(views: tableView.visibleCells, animations: AnimationUtils.tableViewAnimations)
 
         refreshStarted = { [unowned self] in
-            self.cartPresenter.retrieveData()
+            self.retreiveCart()
         }
     }
 

@@ -40,13 +40,12 @@ class DataSourcePresenter<T> where T: Codable {
         return data[row]
     }
 
-    func retrieveData(params: [String: Any]? = nil) {
+    func retrieveData(path: String = "\(T.self)", params: [String: Any]? = nil) {
 
         isFetching = true
         dataControllerDelegate.didStartFetchingData()
 
-        let lmao = ServerSecrets.BASE_URL + "\(T.self)s".lowercased()
-        AF.request( lmao,
+        AF.request( ServerSecrets.BASE_URL + path.lowercased(),
             parameters: params,
             encoding: URLEncoding(destination: .queryString),
             headers: csRequestHeaders).validate().responseJSON { [weak self] response in
