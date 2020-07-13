@@ -66,7 +66,7 @@ extension CartController: DataControllerDelegate {
 extension CartController {
     private func configureTableView() {
         
-        tableView.register(UINib.init(nibName: "CartItemCell", bundle: nil), forCellReuseIdentifier: CartItemCell.identifier)
+        tableView.register(UINib.init(nibName: "ProductItemCell", bundle: nil), forCellReuseIdentifier: ProductItemCell.identifier)
         UIView.animate(views: tableView.visibleCells, animations: AnimationUtils.tableViewAnimations)
 
         refreshStarted = { [unowned self] in
@@ -83,10 +83,10 @@ extension CartController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cartItemCell = tableView.dequeueReusableCell(withIdentifier: CartItemCell.identifier) as! CartItemCell
-        cartItemCell.selectionStyle = .none
-        ProductViewConfigurator.configure(product: cartPresenter.itemForRow(row: indexPath.row), genericProductView:
-            cartItemCell.genericProductView)
-        return cartItemCell
+        let productItemCell = tableView.dequeueReusableCell(withIdentifier: ProductItemCell.identifier) as! ProductItemCell
+        productItemCell.selectionStyle = .none
+        GenericViewConfigurator.configure(product: cartPresenter.itemForRow(row: indexPath.row), genericProductView:
+            productItemCell.genericProductView)
+        return productItemCell
     }
 }
