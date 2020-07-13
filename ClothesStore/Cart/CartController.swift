@@ -19,7 +19,6 @@ class CartController: BaseViewController {
     }
 
     override func viewDidLoad() {
-        title = "Cart"
         self.tabBarController?.title = "My Cart"
         cartPresenter = DataSourcePresenter(dataControllerDelegate: self)
         super.viewDidLoad()
