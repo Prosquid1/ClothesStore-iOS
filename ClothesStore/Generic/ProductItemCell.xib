@@ -72,6 +72,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="addToCartButton" destination="5Y4-nC-46I" id="fBC-w3-zq1"/>
+                <outlet property="addToWishlistButton" destination="k0H-8K-ldj" id="zh7-yy-fqC"/>
                 <outlet property="genericProductView" destination="hZw-hA-tOx" id="Lfd-h6-HcU"/>
             </connections>
             <point key="canvasLocation" x="189.13043478260872" y="644.19642857142856"/>

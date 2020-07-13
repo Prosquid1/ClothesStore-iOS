@@ -53,6 +53,9 @@
 		EA332F8624BCA22400ABA49A /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8524BCA22400ABA49A /* HomeController.swift */; };
 		EA332F8724BCA22400ABA49A /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8524BCA22400ABA49A /* HomeController.swift */; };
 		EA332F8824BCA22400ABA49A /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8524BCA22400ABA49A /* HomeController.swift */; };
+		EA332F8A24BCA7B100ABA49A /* CSFavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8924BCA7B100ABA49A /* CSFavButton.swift */; };
+		EA332F8B24BCA7B100ABA49A /* CSFavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8924BCA7B100ABA49A /* CSFavButton.swift */; };
+		EA332F8C24BCA7B100ABA49A /* CSFavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8924BCA7B100ABA49A /* CSFavButton.swift */; };
 		EAB56D0E24B72CD3006A8225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */; };
 		EAB56D1524B72CD3006A8225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1324B72CD3006A8225 /* Main.storyboard */; };
 		EAB56D1724B72CD4006A8225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1624B72CD4006A8225 /* Assets.xcassets */; };
@@ -110,6 +113,7 @@
 		EA332F7624BB108600ABA49A /* GenericViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewConfigurator.swift; sourceTree = "<group>"; };
 		EA332F7A24BC94C600ABA49A /* StockCountHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCountHelper.swift; sourceTree = "<group>"; };
 		EA332F8524BCA22400ABA49A /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		EA332F8924BCA7B100ABA49A /* CSFavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSFavButton.swift; sourceTree = "<group>"; };
 		EAB56D0A24B72CD3006A8225 /* ClothesStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClothesStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAB56D1424B72CD3006A8225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -276,6 +280,7 @@
 				EA332F5924BA8B9C00ABA49A /* ServerSecrets.swift */,
 				EA332F7224BB0FDF00ABA49A /* AnimationUtils.swift */,
 				EA332F7A24BC94C600ABA49A /* StockCountHelper.swift */,
+				EA332F8924BCA7B100ABA49A /* CSFavButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 				EA332F7724BB108600ABA49A /* GenericViewConfigurator.swift in Sources */,
 				EAB56D5024B9A4F9006A8225 /* String+Extensions.swift in Sources */,
 				EA332F3824BA6EA900ABA49A /* CartController.swift in Sources */,
+				EA332F8A24BCA7B100ABA49A /* CSFavButton.swift in Sources */,
 				EAB56D4624B9A0E1006A8225 /* CartItem.swift in Sources */,
 				EA332F5624BA87AC00ABA49A /* ProductItemCell.swift in Sources */,
 				EA332F7324BB0FDF00ABA49A /* AnimationUtils.swift in Sources */,
@@ -507,6 +513,7 @@
 				EA332F6F24BB07D500ABA49A /* UIViewController+EntryKit.swift in Sources */,
 				EA332F2D24BA6E1400ABA49A /* RESTHelper.swift in Sources */,
 				EAB56D2524B72CD5006A8225 /* ClothesStoreTests.swift in Sources */,
+				EA332F8B24BCA7B100ABA49A /* CSFavButton.swift in Sources */,
 				EA332F3524BA6E6200ABA49A /* ColorPalette.swift in Sources */,
 				EA332F4F24BA813100ABA49A /* DataSourcePresenter.swift in Sources */,
 				EA332F7824BB108600ABA49A /* GenericViewConfigurator.swift in Sources */,
@@ -530,6 +537,7 @@
 				EA332F7024BB07D500ABA49A /* UIViewController+EntryKit.swift in Sources */,
 				EA332F2E24BA6E1400ABA49A /* RESTHelper.swift in Sources */,
 				EAB56D3024B72CD5006A8225 /* ClothesStoreUITests.swift in Sources */,
+				EA332F8C24BCA7B100ABA49A /* CSFavButton.swift in Sources */,
 				EA332F3624BA6E6200ABA49A /* ColorPalette.swift in Sources */,
 				EA332F5024BA813100ABA49A /* DataSourcePresenter.swift in Sources */,
 				EA332F7924BB108600ABA49A /* GenericViewConfigurator.swift in Sources */,
