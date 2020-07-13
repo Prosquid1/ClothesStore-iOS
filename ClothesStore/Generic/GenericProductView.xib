@@ -28,20 +28,20 @@
                     <rect key="frame" x="10" y="423" width="60" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOLD OUT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rnu-X7-J0A">
-                            <rect key="frame" x="5" y="13.5" width="50" height="33.5"/>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                            <rect key="frame" x="8" y="12" width="44" height="36"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="Rnu-X7-J0A" firstAttribute="leading" secondItem="KTL-0A-gky" secondAttribute="leading" constant="8" id="6mL-oS-blR"/>
                         <constraint firstAttribute="height" constant="60" id="EQp-pK-BMd"/>
-                        <constraint firstItem="Rnu-X7-J0A" firstAttribute="centerX" secondItem="KTL-0A-gky" secondAttribute="centerX" id="HyH-ez-ZoU"/>
+                        <constraint firstAttribute="bottom" secondItem="Rnu-X7-J0A" secondAttribute="bottom" constant="12" id="Hv1-Im-0SP"/>
                         <constraint firstAttribute="width" constant="60" id="Qry-jw-JOD"/>
-                        <constraint firstAttribute="trailing" secondItem="Rnu-X7-J0A" secondAttribute="trailing" constant="5" id="R0X-ro-zS0"/>
-                        <constraint firstItem="Rnu-X7-J0A" firstAttribute="centerY" secondItem="KTL-0A-gky" secondAttribute="centerY" id="aJf-zc-wCe"/>
-                        <constraint firstItem="Rnu-X7-J0A" firstAttribute="leading" secondItem="KTL-0A-gky" secondAttribute="leading" constant="5" id="e3C-XK-qDj"/>
+                        <constraint firstAttribute="trailing" secondItem="Rnu-X7-J0A" secondAttribute="trailing" constant="8" id="jZG-QI-6PE"/>
+                        <constraint firstItem="Rnu-X7-J0A" firstAttribute="top" secondItem="KTL-0A-gky" secondAttribute="top" constant="12" id="o7p-d8-oQw"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -112,7 +112,7 @@
                 <constraint firstItem="f8m-jh-ZWk" firstAttribute="centerY" secondItem="KTL-0A-gky" secondAttribute="centerY" id="loj-1y-3v2"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="yOU-gf-Fyy"/>
-            <point key="canvasLocation" x="838" y="83"/>
+            <point key="canvasLocation" x="837.68115942028987" y="82.366071428571431"/>
         </view>
     </objects>
 </document>

@@ -27,7 +27,7 @@ class BaseViewController: UITableViewController, NVActivityIndicatorViewable {
         tableView.separatorColor = .clear
 
         _refreshControl = UIRefreshControl()
-        _refreshControl.tintColor = .lightGray
+        _refreshControl.tintColor = ColorPalette.primary
         if #available(iOS 10.0, *) {
             refreshControl = _refreshControl
         } else {
