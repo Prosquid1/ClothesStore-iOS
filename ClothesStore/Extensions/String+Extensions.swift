@@ -1,5 +1,5 @@
 //
-//  Extensions.swift
+//  String+Extensions.swift
 //  ClothesStore
 //
 //  Created by Oyeleke Okiki on 7/11/20.
@@ -12,6 +12,9 @@ import UIKit
 extension String {
     func strikeThrough() -> NSAttributedString  {
         return NSAttributedString(string: self, attributes: [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single])
+    }
 
+    func formatPrice() -> String {
+        return "£\(self)"
     }
 }

@@ -16,7 +16,7 @@ class ProductViewConfigurator {
         genericProductView.productNameLabel.text = product.name
         genericProductView.productPriceLabel.text = product.price
         genericProductView.productCategoryLabel.text = product.category
-        genericProductView.productPriceLabel.text = product.price
+        genericProductView.productPriceLabel.text = product.price?.formatPrice()
 
         configureProductImageWithName(name: product.name, genericProductView.productImageUIView)
         configureSoldOutText(product.stock == 0, soldOutLabel: genericProductView.productSoldOutText)
@@ -31,7 +31,7 @@ class ProductViewConfigurator {
     private static func configureProductOldPrice(_ oldPrice: String?, oldPriceLabel: UILabel, spacingConstraint: NSLayoutConstraint) {
         oldPriceLabel.isHidden = oldPrice == nil
         spacingConstraint.constant = oldPrice == nil ? 0.0 : 5.0
-        oldPriceLabel.attributedText = oldPrice == nil ? nil : oldPrice?.strikeThrough()
+        oldPriceLabel.attributedText = oldPrice == nil ? nil : oldPrice?.formatPrice().strikeThrough()
     }
 
     private static func configureSoldOutText(_ productIsSoldOut: Bool, soldOutLabel: UILabel) {
