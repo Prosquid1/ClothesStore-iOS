@@ -32,12 +32,11 @@ class CartController: BaseViewController {
     }
 }
 
-
 extension CartController: DataControllerDelegate {
     func dataRetrieved<T>(data: [T]) {
         stopAnimating()
         tableView.reloadData()
-        tableView.separatorColor = ColorPalette.primary
+        tableView.separatorColor = ColorPalette.tableSeparator
         _refreshControl.endRefreshing()
     }
 
