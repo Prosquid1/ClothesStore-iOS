@@ -33,39 +33,6 @@ class CartController: BaseViewController {
     }
 }
 
-extension CartController: DataControllerDelegate {
-    func dataRetrieved<T>(data: [T]) {
-        cartPresenter.fetchProductsForMapping() //Additional client-side processing since we cam't render a CartItem
-    }
-    
-    func didStartFetchingData() {
-        _refreshControl.beginRefreshing()
-    }
-    
-    func dataIsEmpty() {
-        refreshViewForNewDataState()
-        tableView.separatorColor = .clear
-        showTopErrorNote(message: "No items available!")
-    }
-    
-    func dataFetchingFailed(errorMessage: String) {
-        _refreshControl.endRefreshing()
-        showTopErrorNote(message: errorMessage)
-    }
-}
-
-extension CartController: MappedCartProductsDelegate {
-    func cartProductsRetrieved(data: [Product]) {
-        tableView.separatorColor = ColorPalette.tableSeparator
-        refreshViewForNewDataState()
-    }
-    
-    func cartProductsFetchingFailed(errorMessage: String) {
-        _refreshControl.endRefreshing()
-        showTopErrorNote(message: "No items available!")
-    }
-}
-
 //TableView extensions
 extension CartController {
     private func configureTableView() {
@@ -89,7 +56,41 @@ extension CartController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let productItemCell = tableView.dequeueReusableCell(withIdentifier: ProductItemCell.identifier) as! ProductItemCell
         productItemCell.selectionStyle = .none
-        GenericViewConfigurator.configure(product: cartPresenter.itemForRow(row: indexPath.row), genericProductView: productItemCell.genericProductView)
+        GenericViewConfigurator.configure(product: cartPresenter.productForRow(row: indexPath.row), genericProductView: productItemCell.genericProductView)
         return productItemCell
     }
 }
+
+extension CartController: DataControllerDelegate {
+    func dataRetrieved<T>(data: [T]) {
+        cartPresenter.fetchProductsForMapping(cartItems: data as! [CartItem]) //Additional client-side processing since we cam't render a CartItem
+    }
+
+    func didStartFetchingData() {
+        _refreshControl.beginRefreshing()
+    }
+
+    func dataIsEmpty() {
+        refreshViewForNewDataState()
+        tableView.separatorColor = .clear
+        showTopErrorNote(message: "No items available!")
+    }
+
+    func dataFetchingFailed(errorMessage: String) {
+        _refreshControl.endRefreshing()
+        showTopErrorNote(message: errorMessage)
+    }
+}
+
+extension CartController: MappedCartProductsDelegate {
+    func cartProductsRetrieved(data: [Product]) {
+        tableView.separatorColor = ColorPalette.tableSeparator
+        refreshViewForNewDataState()
+    }
+
+    func cartProductsFetchingFailed(errorMessage: String) {
+        _refreshControl.endRefreshing()
+        showTopErrorNote(message: "No items available!")
+    }
+}
+

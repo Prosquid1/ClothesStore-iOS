@@ -23,7 +23,7 @@ class CartDataSourcePresenter: DataSourcePresenter<CartItem> {
         super.init(dataControllerDelegate: dataControllerDelegate)
     }
     
-    func fetchProductsForMapping() {
+    func fetchProductsForMapping(cartItems: [CartItem]) {
         NetworkHelper<[Product]>.makeRequest(path: "products", onSuccess: {
             [unowned self] products in
             if (products.isEmpty) {
@@ -31,7 +31,7 @@ class CartDataSourcePresenter: DataSourcePresenter<CartItem> {
                 return
             }
 
-            self.queryCartItemsForProducts(cartItems: self.data, allProducts: products)
+            self.queryCartItemsForProducts(cartItems: cartItems, allProducts: products)
         }){ [weak self] errorMessage in
             self?.mappedCartProductsDelegate?.cartProductsFetchingFailed(errorMessage: errorMessage)
             
@@ -43,7 +43,7 @@ class CartDataSourcePresenter: DataSourcePresenter<CartItem> {
         mappedCartProductsDelegate?.cartProductsRetrieved(data: allProducts)
     }
     
-    func itemForRow(row: Int) -> Product {
+    func productForRow(row: Int) -> Product {
         return products[row]
     }
     
