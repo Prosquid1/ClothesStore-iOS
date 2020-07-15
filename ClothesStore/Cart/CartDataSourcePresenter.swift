@@ -9,7 +9,8 @@
 import Foundation
 
 class CartDataSourcePresenter: DataSourcePresenter<CartItem> {
-    
+
+    private var products = [Product]()
     var mappedCartProductsDelegate: MappedCartProductsDelegate?
     
     init(dataControllerDelegate: DataControllerDelegate,
@@ -24,22 +25,26 @@ class CartDataSourcePresenter: DataSourcePresenter<CartItem> {
     
     func fetchProductsForMapping() {
         NetworkHelper<[Product]>.makeRequest(path: "products", onSuccess: {
-            [weak self] data in
-            if (data.isEmpty) {
-                self?.mappedCartProductsDelegate?.cartProductsFetchingFailed(errorMessage: "No items found")
+            [unowned self] products in
+            if (products.isEmpty) {
+                self.mappedCartProductsDelegate?.cartProductsFetchingFailed(errorMessage: "No items found")
                 return
             }
-            
-            //self?.data = data
-            //self?.dataControllerDelegate.dataRetrieved(data: data)
+
+            self.queryCartItemsForProducts(cartItems: self.data, allProducts: products)
         }){ [weak self] errorMessage in
             self?.mappedCartProductsDelegate?.cartProductsFetchingFailed(errorMessage: errorMessage)
             
         }
     }
+
+    func queryCartItemsForProducts(cartItems: [CartItem], allProducts: [Product]) {
+        products = allProducts
+        mappedCartProductsDelegate?.cartProductsRetrieved(data: allProducts)
+    }
     
-    func itemForRow(row: Int) -> Product? {
-        return nil
+    func itemForRow(row: Int) -> Product {
+        return products[row]
     }
     
 }

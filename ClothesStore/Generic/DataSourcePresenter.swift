@@ -15,7 +15,7 @@ protocol DataControllerDelegate {
 }
 
 class DataSourcePresenter<T> where T: Codable {
-    private var data = [T]()
+    var data = [T]()
 
     let dataControllerDelegate: DataControllerDelegate
 
