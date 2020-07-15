@@ -19,32 +19,6 @@ class GenericProductView: UIView {
 
     @IBOutlet weak var productImageUIView: UIView!
 
-    private var contentView: UIView!
-
-    // Initialization
-    private func loadViewFromNib() -> UIView {
-        let selfClass = Swift.type(of: self)
-        let bundle = Bundle(for: selfClass)
-        let nib = UINib(nibName: String(describing: selfClass), bundle: bundle)
-        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
-
-        return view
-    }
-
-    // override point
-    internal func xibSetup() {
-        contentView = loadViewFromNib()
-        contentView.frame = bounds
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin, .flexibleTopMargin]
-        contentView.translatesAutoresizingMaskIntoConstraints = true
-
-        let stretchingView = UIView()
-        stretchingView.setContentHuggingPriority(UILayoutPriority(rawValue: 1), for: .horizontal)
-        stretchingView.backgroundColor = .clear
-        stretchingView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(contentView)
-    }
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
