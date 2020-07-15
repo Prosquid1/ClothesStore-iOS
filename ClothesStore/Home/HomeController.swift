@@ -27,7 +27,6 @@ class HomeController: BaseViewController {
 
 extension HomeController: DataControllerDelegate {
     func dataRetrieved<T>(data: [T]) {
-        tableView.separatorColor = ColorPalette.tableSeparator
         refreshViewForNewDataState()
     }
 
@@ -37,7 +36,6 @@ extension HomeController: DataControllerDelegate {
 
     func dataIsEmpty() {
         refreshViewForNewDataState()
-        tableView.separatorColor = .clear
         showTopErrorNote(message: "No items available!")
     }
 
@@ -49,17 +47,10 @@ extension HomeController: DataControllerDelegate {
 
 extension HomeController {
     private func configureTableView() {
-        
         tableView.register(UINib.init(nibName: "ProductItemCell", bundle: nil), forCellReuseIdentifier: ProductItemCell.identifier)
-        UIView.animate(views: tableView.visibleCells, animations: AnimationUtils.tableViewAnimations)
-
         refreshStarted = { [unowned self] in
             self.retreiveProducts()
         }
-    }
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 72
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

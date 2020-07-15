@@ -10,6 +10,8 @@ import NVActivityIndicatorView
 import SwiftEntryKit
 
 class BaseViewController: UITableViewController, NVActivityIndicatorViewable {
+
+    let blankFooterView = UIView()
     
     var _refreshControl: UIRefreshControl!
     var refreshStarted: (() -> Void)?
@@ -24,7 +26,7 @@ class BaseViewController: UITableViewController, NVActivityIndicatorViewable {
     
     private func setup() {
         tableView.separatorInset.left = 0
-        tableView.separatorColor = .clear
+        tableView.separatorColor =  ColorPalette.tableSeparator
         
         _refreshControl = UIRefreshControl()
         _refreshControl.tintColor = ColorPalette.primary
@@ -41,26 +43,24 @@ class BaseViewController: UITableViewController, NVActivityIndicatorViewable {
     }
     
     @objc private func refreshTriggered(_ sender: Any) {
-        // Fetch Services Data
+        // Fetch Data
         refreshStarted?()
     }
-    
-    func startNVAnimation() {
-        if isAnimating { return }
-        startAnimating(CGSize(width: 50.0, height: 50.0),
-                       type: NVActivityIndicatorType.ballScaleRipple,
-                       color: ColorPalette.primaryDark, fadeInAnimation: nil)
-    }
-    
-    func stopNVAnimation() {
-        if !isAnimating { return }
-        stopAnimating()
-    }
-    
-    
+
     func refreshViewForNewDataState() {
         _refreshControl.endRefreshing()
         tableView.reloadData()
+        UIView.animate(views: tableView.visibleCells, animations: AnimationUtils.tableViewAnimations)
     }
-    
+}
+
+extension BaseViewController {
+    //To prevent lines from showing in empty tableview spaces
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return blankFooterView
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 72
+    }
 }
