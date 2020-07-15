@@ -49,27 +49,28 @@ extension CartController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let productItemCell = tableView.dequeueReusableCell(withIdentifier: ProductItemCell.identifier) as! ProductItemCell
         productItemCell.selectionStyle = .none
-        GenericViewConfigurator.configure(product: cartPresenter.cartItemsToProductForRow(row: indexPath.row).product, genericProductView: productItemCell.genericProductView)
+        let cartItemToProduct = cartPresenter.cartItemsToProductForRow(row: indexPath.row)
+        GenericViewConfigurator.configure(product: cartItemToProduct.product, productsInCartCount: cartItemToProduct.cartItemIds.count, genericProductView: productItemCell.genericProductView)
         return productItemCell
     }
-
-
+    
+    
 }
 
 extension CartController: DataControllerDelegate {
     func dataRetrieved<T>(data: [T]) {
         cartPresenter.fetchProductsForMapping(cartItems: data as! [CartItem]) //Additional client-side processing since we cam't render a CartItem
     }
-
+    
     func didStartFetchingData() {
         _refreshControl.beginRefreshing()
     }
-
+    
     func dataIsEmpty() {
         refreshViewForNewDataState()
         showTopErrorNote(message: "No items available!")
     }
-
+    
     func dataFetchingFailed(errorMessage: String) {
         _refreshControl.endRefreshing()
         showTopErrorNote(message: errorMessage)
@@ -80,7 +81,7 @@ extension CartController: MappedCartProductsDelegate {
     func cartProductsRetrieved(data: [CartItemsToProduct]) {
         refreshViewForNewDataState()
     }
-
+    
     func cartProductsFetchingFailed(errorMessage: String) {
         _refreshControl.endRefreshing()
         showTopErrorNote(message: "No items available!")
