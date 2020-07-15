@@ -1,38 +1,31 @@
 //
-//  CartController.swift
+//  HomeController.swift
 //
-//  Created by Oyeleke Okiki on 11/7/20.
+//  Created by Oyeleke Okiki on 13/7/20.
 //  Copyright © 2020 Personal. All rights reserved.
 //
 
 import UIKit
 import SwiftEntryKit
 
-class CartController: BaseViewController {
+class HomeController: BaseViewController {
 
-    private var cartPresenter: CartDataSourcePresenter!
+    private var homePresenter: DataSourcePresenter<Product>!
 
-    let cartFooter = UIView()
-
-    private func retreiveCart() {
-        cartPresenter.retrieveData(path: "cart")
+    private func retreiveProducts() {
+        homePresenter.retrieveData(path: "products")
     }
 
     override func viewDidLoad() {
-
-        self.tabBarController?.title = "My Cart"
-        cartPresenter = CartDataSourcePresenter(dataControllerDelegate: self)
+        self.tabBarController?.title = "Home"
+        homePresenter = DataSourcePresenter(dataControllerDelegate: self)
         super.viewDidLoad()
         configureTableView()
-        retreiveCart()
-    }
-
-    private func configureFooterView() {
-        tableView.tableFooterView = cartFooter
+        retreiveProducts()
     }
 }
 
-extension CartController: DataControllerDelegate {
+extension HomeController: DataControllerDelegate {
     func dataRetrieved<T>(data: [T]) {
         stopAnimating()
         tableView.reloadData()
@@ -46,11 +39,11 @@ extension CartController: DataControllerDelegate {
 
     func dataIsEmpty() {
         stopAnimating()
-        resetCartDataWithUI()
+        resetProductDataWithUI()
         showTopErrorNote(message: "No items available!")
     }
 
-    func resetCartDataWithUI() {
+    func resetProductDataWithUI() {
         stopAnimating()
         _refreshControl.endRefreshing()
         tableView.reloadData()
@@ -63,14 +56,14 @@ extension CartController: DataControllerDelegate {
     }
 }
 
-extension CartController {
+extension HomeController {
     private func configureTableView() {
         
         tableView.register(UINib.init(nibName: "ProductItemCell", bundle: nil), forCellReuseIdentifier: ProductItemCell.identifier)
         UIView.animate(views: tableView.visibleCells, animations: AnimationUtils.tableViewAnimations)
 
         refreshStarted = { [unowned self] in
-            self.retreiveCart()
+            self.retreiveProducts()
         }
     }
 
@@ -79,14 +72,15 @@ extension CartController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cartPresenter.dataCount
+        return homePresenter.dataCount
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let productItemCell = tableView.dequeueReusableCell(withIdentifier: ProductItemCell.identifier) as! ProductItemCell
         productItemCell.selectionStyle = .none
-//        GenericViewConfigurator.configure(product: cartPresenter.itemForRow(row: indexPath.row), genericProductView:
-//            productItemCell.genericProductView)
+        GenericViewConfigurator.configure(product: homePresenter.itemForRow(row: indexPath.row), genericProductView:
+            productItemCell.genericProductView)
+        productItemCell.addToWishlistButton.normalColor = .black
         return productItemCell
     }
 }
