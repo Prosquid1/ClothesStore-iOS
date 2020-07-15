@@ -57,4 +57,10 @@ class BaseViewController: UITableViewController, NVActivityIndicatorViewable {
         stopAnimating()
     }
 
+
+    func refreshViewForNewDataState() {
+        _refreshControl.endRefreshing()
+        tableView.reloadData()
+    }
+
 }

@@ -21,7 +21,8 @@ class CartController: BaseViewController {
     override func viewDidLoad() {
 
         self.tabBarController?.title = "My Cart"
-        cartPresenter = CartDataSourcePresenter(dataControllerDelegate: self)
+        cartPresenter = CartDataSourcePresenter(dataControllerDelegate: self,
+                                                mappedCartProductsDelegate: self)
         super.viewDidLoad()
         configureTableView()
         retreiveCart()
@@ -34,10 +35,7 @@ class CartController: BaseViewController {
 
 extension CartController: DataControllerDelegate {
     func dataRetrieved<T>(data: [T]) {
-        stopAnimating()
-        tableView.reloadData()
-        tableView.separatorColor = ColorPalette.tableSeparator
-        _refreshControl.endRefreshing()
+        cartPresenter.fetchProductsForMapping() //Additional client-side processing since we cam't render a CartItem
     }
 
     func didStartFetchingData() {
@@ -45,24 +43,30 @@ extension CartController: DataControllerDelegate {
     }
 
     func dataIsEmpty() {
-        stopAnimating()
-        resetCartDataWithUI()
+        refreshViewForNewDataState()
+        tableView.separatorColor = .clear
         showTopErrorNote(message: "No items available!")
     }
 
-    func resetCartDataWithUI() {
-        stopAnimating()
-        _refreshControl.endRefreshing()
-        tableView.reloadData()
-    }
-
     func dataFetchingFailed(errorMessage: String) {
-        stopAnimating()
         _refreshControl.endRefreshing()
         showTopErrorNote(message: errorMessage)
     }
 }
 
+extension CartController: MappedCartProductsDelegate {
+    func cartProductsRetrieved<T>(data: [T]) {
+        tableView.separatorColor = ColorPalette.tableSeparator
+        refreshViewForNewDataState()
+    }
+
+    func cartProductsFetchingFailed(errorMessage: String) {
+        _refreshControl.endRefreshing()
+        showTopErrorNote(message: "No items available!")
+    }
+}
+
+//TableView extensions
 extension CartController {
     private func configureTableView() {
         
@@ -85,8 +89,8 @@ extension CartController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let productItemCell = tableView.dequeueReusableCell(withIdentifier: ProductItemCell.identifier) as! ProductItemCell
         productItemCell.selectionStyle = .none
-//        GenericViewConfigurator.configure(product: cartPresenter.itemForRow(row: indexPath.row), genericProductView:
-//            productItemCell.genericProductView)
+        //        GenericViewConfigurator.configure(product: cartPresenter.itemForRow(row: indexPath.row), genericProductView:
+        //            productItemCell.genericProductView)
         return productItemCell
     }
 }

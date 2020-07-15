@@ -27,10 +27,8 @@ class HomeController: BaseViewController {
 
 extension HomeController: DataControllerDelegate {
     func dataRetrieved<T>(data: [T]) {
-        stopAnimating()
-        tableView.reloadData()
         tableView.separatorColor = ColorPalette.tableSeparator
-        _refreshControl.endRefreshing()
+        refreshViewForNewDataState()
     }
 
     func didStartFetchingData() {
@@ -38,19 +36,12 @@ extension HomeController: DataControllerDelegate {
     }
 
     func dataIsEmpty() {
-        stopAnimating()
-        resetProductDataWithUI()
+        refreshViewForNewDataState()
+        tableView.separatorColor = .clear
         showTopErrorNote(message: "No items available!")
     }
 
-    func resetProductDataWithUI() {
-        stopAnimating()
-        _refreshControl.endRefreshing()
-        tableView.reloadData()
-    }
-
     func dataFetchingFailed(errorMessage: String) {
-        stopAnimating()
         _refreshControl.endRefreshing()
         showTopErrorNote(message: errorMessage)
     }
