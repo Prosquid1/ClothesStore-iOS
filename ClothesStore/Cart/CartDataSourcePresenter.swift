@@ -11,16 +11,16 @@ import Foundation
 class CartDataSourcePresenter: DataSourcePresenter<CartItem> {
 
     private var cartItemsToProduct = [CartItemsToProduct]()
-    var mappedCartProductsDelegate: MappedCartProductsDelegate?
+    var cartProductsDelegate: CartProductsDelegate?
 
     override var dataCount: Int {
         get { return cartItemsToProduct.count }
     }
     
     init(dataControllerDelegate: DataControllerDelegate,
-         mappedCartProductsDelegate: MappedCartProductsDelegate) {
+         cartProductsDelegate: CartProductsDelegate) {
         super.init(dataControllerDelegate: dataControllerDelegate)
-        self.mappedCartProductsDelegate = mappedCartProductsDelegate
+        self.cartProductsDelegate = cartProductsDelegate
     }
     
     required init(dataControllerDelegate: DataControllerDelegate) {
@@ -31,13 +31,13 @@ class CartDataSourcePresenter: DataSourcePresenter<CartItem> {
         NetworkHelper<[Product]>.makeRequest(path: "products", onSuccess: {
             [unowned self] products in
             if (products.isEmpty) {
-                self.mappedCartProductsDelegate?.cartProductsFetchingFailed(errorMessage: "No items found")
+                self.cartProductsDelegate?.cartProductsFetchingFailed(errorMessage: "No items found")
                 return
             }
 
             self.queryCartItemsForProducts(cartItems: cartItems, allProducts: products)
         }){ [weak self] errorMessage in
-            self?.mappedCartProductsDelegate?.cartProductsFetchingFailed(errorMessage: errorMessage)
+            self?.cartProductsDelegate?.cartProductsFetchingFailed(errorMessage: errorMessage)
             
         }
     }
@@ -45,13 +45,21 @@ class CartDataSourcePresenter: DataSourcePresenter<CartItem> {
     func queryCartItemsForProducts(cartItems: [CartItem], allProducts: [Product]) {
         let cartItemsGroupedByProduct = Dictionary(grouping: cartItems, by: { (element: CartItem) in
             return element.productId
-            })
+        })
         let productIdToProductMap = Dictionary(uniqueKeysWithValues: allProducts.map{($0.id, $0)})
 
         cartItemsToProduct = cartItemsGroupedByProduct.map{
             CartItemsToProduct(product: productIdToProductMap[$0.key]!, cartItemIds: $0.value.map {$0.id})
         }
-        mappedCartProductsDelegate?.cartProductsRetrieved(data: cartItemsToProduct)
+        cartProductsDelegate?.cartProductsRetrieved(data: cartItemsToProduct)
+        computeCartItemTotalValue(cartItemsToProduct)
+    }
+
+    private func computeCartItemTotalValue(_ cartItemsToProduct: [CartItemsToProduct]) {
+        let totalValue = cartItemsToProduct.reduce(0, {$0 + (Double($1.product.price!) ?? 0) * Double($1.cartItemIds.count) }
+        )
+        cartProductsDelegate?.cartValueComputed(formattedValue: String(totalValue).formatPrice() )
+
     }
     
     func cartItemsToProductForRow(row: Int) -> CartItemsToProduct {

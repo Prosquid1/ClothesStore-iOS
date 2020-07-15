@@ -22,7 +22,7 @@ class CartController: BaseViewController {
         
         self.tabBarController?.title = "My Cart"
         cartPresenter = CartDataSourcePresenter(dataControllerDelegate: self,
-                                                mappedCartProductsDelegate: self)
+                                                cartProductsDelegate: self)
         super.viewDidLoad()
         cartFooterView.isHidden = true
         configureTableView()
@@ -79,7 +79,7 @@ extension CartController: DataControllerDelegate {
     }
 }
 
-extension CartController: MappedCartProductsDelegate {
+extension CartController: CartProductsDelegate {
     func cartProductsRetrieved(data: [CartItemsToProduct]) {
         cartFooterView.isHidden = false
         refreshViewForNewDataState()
@@ -90,8 +90,8 @@ extension CartController: MappedCartProductsDelegate {
         cartFooterView.isHidden = true
         showTopErrorNote(message: "No items available!")
     }
-    func cartValueComputed(value: Double) {
-
+    func cartValueComputed(formattedValue: String) {
+        cartFooterView.productTotalAmountLabel.text = formattedValue
     }
 }
 

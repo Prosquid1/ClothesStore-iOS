@@ -62,7 +62,7 @@
 		EA332F9224BEC26400ABA49A /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F9124BEC26400ABA49A /* NetworkHelper.swift */; };
 		EA332F9324BEC26400ABA49A /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F9124BEC26400ABA49A /* NetworkHelper.swift */; };
 		EA332F9424BEC26400ABA49A /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F9124BEC26400ABA49A /* NetworkHelper.swift */; };
-		EA332F9A24BEC58900ABA49A /* MappedCartProductsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F9924BEC58900ABA49A /* MappedCartProductsDelegate.swift */; };
+		EA332F9A24BEC58900ABA49A /* CartProductsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F9924BEC58900ABA49A /* CartProductsDelegate.swift */; };
 		EA332F9C24BEE51200ABA49A /* CartCountHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F9B24BEE51200ABA49A /* CartCountHelper.swift */; };
 		EA332F9E24BEE86200ABA49A /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F9D24BEE86200ABA49A /* CartItemCell.swift */; };
 		EA332FA024BEE8B400ABA49A /* CartItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA332F9F24BEE8B400ABA49A /* CartItemCell.xib */; };
@@ -128,7 +128,7 @@
 		EA332F8924BCA7B100ABA49A /* CSFavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSFavButton.swift; sourceTree = "<group>"; };
 		EA332F8D24BCAA9600ABA49A /* CartDataSourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDataSourcePresenter.swift; sourceTree = "<group>"; };
 		EA332F9124BEC26400ABA49A /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
-		EA332F9924BEC58900ABA49A /* MappedCartProductsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappedCartProductsDelegate.swift; sourceTree = "<group>"; };
+		EA332F9924BEC58900ABA49A /* CartProductsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProductsDelegate.swift; sourceTree = "<group>"; };
 		EA332F9B24BEE51200ABA49A /* CartCountHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCountHelper.swift; sourceTree = "<group>"; };
 		EA332F9D24BEE86200ABA49A /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
 		EA332F9F24BEE8B400ABA49A /* CartItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartItemCell.xib; sourceTree = "<group>"; };
@@ -288,7 +288,7 @@
 				EAB56D4524B9A0E1006A8225 /* CartItem.swift */,
 				EAB56D4724B9A0F7006A8225 /* CartItemsToProduct.swift */,
 				EA332F8D24BCAA9600ABA49A /* CartDataSourcePresenter.swift */,
-				EA332F9924BEC58900ABA49A /* MappedCartProductsDelegate.swift */,
+				EA332F9924BEC58900ABA49A /* CartProductsDelegate.swift */,
 				EA332F9B24BEE51200ABA49A /* CartCountHelper.swift */,
 				EA332F9D24BEE86200ABA49A /* CartItemCell.swift */,
 				EA332F9F24BEE8B400ABA49A /* CartItemCell.xib */,
@@ -517,7 +517,7 @@
 				EA332F7724BB108600ABA49A /* GenericViewConfigurator.swift in Sources */,
 				EA332F9E24BEE86200ABA49A /* CartItemCell.swift in Sources */,
 				EAB56D5024B9A4F9006A8225 /* String+Extensions.swift in Sources */,
-				EA332F9A24BEC58900ABA49A /* MappedCartProductsDelegate.swift in Sources */,
+				EA332F9A24BEC58900ABA49A /* CartProductsDelegate.swift in Sources */,
 				EA332F3824BA6EA900ABA49A /* CartController.swift in Sources */,
 				EA332F8A24BCA7B100ABA49A /* CSFavButton.swift in Sources */,
 				EAB56D4624B9A0E1006A8225 /* CartItem.swift in Sources */,

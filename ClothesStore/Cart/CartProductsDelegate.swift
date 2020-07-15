@@ -1,5 +1,5 @@
 //
-//  MappedCartProductsDelegate.swift
+//  CartProductsDelegate.swift
 //  ClothesStore
 //
 //  Created by Oyeleke Okiki on 7/15/20.
@@ -8,7 +8,8 @@
 
 import Foundation
 
-protocol MappedCartProductsDelegate {
+protocol CartProductsDelegate {
+    func cartValueComputed(formattedValue: String)
     func cartProductsRetrieved(data: [CartItemsToProduct])
     func cartProductsFetchingFailed(errorMessage: String)
 }
