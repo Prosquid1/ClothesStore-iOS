@@ -10,10 +10,10 @@ import NVActivityIndicatorView
 import SwiftEntryKit
 
 class BaseViewController: UITableViewController, NVActivityIndicatorViewable {
-
+    
     var _refreshControl: UIRefreshControl!
     var refreshStarted: (() -> Void)?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,11 +21,11 @@ class BaseViewController: UITableViewController, NVActivityIndicatorViewable {
         tableView.dataSource = self
         setup()
     }
-
+    
     private func setup() {
         tableView.separatorInset.left = 0
         tableView.separatorColor = .clear
-
+        
         _refreshControl = UIRefreshControl()
         _refreshControl.tintColor = ColorPalette.primary
         if #available(iOS 10.0, *) {
@@ -36,31 +36,31 @@ class BaseViewController: UITableViewController, NVActivityIndicatorViewable {
         // uikit issue-fix: called to change tint color
         _refreshControl.beginRefreshingManually()
         _refreshControl.endRefreshing()
-
+        
         _refreshControl.addTarget(self, action: #selector(refreshTriggered(_:)), for: .valueChanged)
     }
-
+    
     @objc private func refreshTriggered(_ sender: Any) {
         // Fetch Services Data
         refreshStarted?()
     }
-
+    
     func startNVAnimation() {
         if isAnimating { return }
         startAnimating(CGSize(width: 50.0, height: 50.0),
                        type: NVActivityIndicatorType.ballScaleRipple,
                        color: ColorPalette.primaryDark, fadeInAnimation: nil)
     }
-
+    
     func stopNVAnimation() {
         if !isAnimating { return }
         stopAnimating()
     }
-
-
+    
+    
     func refreshViewForNewDataState() {
         _refreshControl.endRefreshing()
         tableView.reloadData()
     }
-
+    
 }
