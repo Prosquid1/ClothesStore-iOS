@@ -7,6 +7,6 @@
 //
 
 class CartItem: Codable {
-    var id: Int?
+    var id: Int
     var productId: Int
 }

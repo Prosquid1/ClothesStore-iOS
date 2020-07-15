@@ -6,8 +6,12 @@
 //  Copyright © 2020 Personal. All rights reserved.
 //
 
-class CartItemsToProduct: Codable {
-    var cartItemIds: Array<Int>
+class CartItemsToProduct {
+    var cartItemIds: [Int]
     var product: Product
-    
+
+    init(product: Product, cartItemIds: [Int]) {
+        self.product = product
+        self.cartItemIds = cartItemIds
+    }
 }
