@@ -12,7 +12,7 @@ class CartController: BaseViewController {
     
     private var cartPresenter: CartDataSourcePresenter!
     
-    let cartFooter = UIView()
+    let cartFooterView = CartFooterView()
     
     private func retreiveCart() {
         cartPresenter.retrieveData(path: "cart")
@@ -24,13 +24,11 @@ class CartController: BaseViewController {
         cartPresenter = CartDataSourcePresenter(dataControllerDelegate: self,
                                                 mappedCartProductsDelegate: self)
         super.viewDidLoad()
+        cartFooterView.isHidden = true
         configureTableView()
         retreiveCart()
     }
-    
-    private func configureFooterView() {
-        tableView.tableFooterView = cartFooter
-    }
+
 }
 
 //TableView extensions
@@ -53,7 +51,10 @@ extension CartController {
         GenericViewConfigurator.configure(product: cartItemToProduct.product, productsInCartCount: cartItemToProduct.cartItemIds.count, genericProductView: cartItemCell.genericProductView)
         return cartItemCell
     }
-    
+
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return cartFooterView
+    }
     
 }
 
@@ -68,6 +69,7 @@ extension CartController: DataControllerDelegate {
     
     func dataIsEmpty() {
         refreshViewForNewDataState()
+        cartFooterView.isHidden = true
         showTopErrorNote(message: "No items available!")
     }
     
@@ -79,12 +81,17 @@ extension CartController: DataControllerDelegate {
 
 extension CartController: MappedCartProductsDelegate {
     func cartProductsRetrieved(data: [CartItemsToProduct]) {
+        cartFooterView.isHidden = false
         refreshViewForNewDataState()
     }
     
     func cartProductsFetchingFailed(errorMessage: String) {
         _refreshControl.endRefreshing()
+        cartFooterView.isHidden = true
         showTopErrorNote(message: "No items available!")
+    }
+    func cartValueComputed(value: Double) {
+
     }
 }
 

@@ -37,10 +37,10 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxV-xZ-0x1">
-                    <rect key="frame" x="16" y="832.5" width="382" height="29.5"/>
+                    <rect key="frame" x="16" y="832.5" width="382" height="40"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="48" id="TKm-81-8pX"/>
+                        <constraint firstAttribute="height" constant="40" id="ZzI-qT-Hu0"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <state key="normal" title="PAY">
@@ -62,7 +62,6 @@
                 <constraint firstItem="F7F-uh-of1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Hrp-GX-Xiv"/>
                 <constraint firstItem="F7F-uh-of1" firstAttribute="centerX" secondItem="hxV-xZ-0x1" secondAttribute="centerX" id="q54-M5-ypv"/>
                 <constraint firstItem="F7F-uh-of1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="s2m-KG-tgm"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="hxV-xZ-0x1" secondAttribute="bottom" id="wJj-am-HzD"/>
                 <constraint firstItem="hxV-xZ-0x1" firstAttribute="top" secondItem="F7F-uh-of1" secondAttribute="bottom" constant="10" id="yVy-Vn-xiG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
