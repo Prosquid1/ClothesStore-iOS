@@ -44,6 +44,9 @@
                                         <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addedItemToWishlist:" destination="P9T-vR-Zyz" eventType="touchUpInside" id="uHO-a4-sQP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Y4-nC-46I">
                                 <rect key="frame" x="0.0" y="32" width="40" height="22"/>
@@ -53,7 +56,12 @@
                                     <constraint firstAttribute="height" constant="22" id="u3G-pR-6zv"/>
                                 </constraints>
                                 <color key="tintColor" name="primaryColor"/>
-                                <state key="normal" image="cart.badge.plus" catalog="system"/>
+                                <state key="normal" image="cart.badge.plus" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="addedItemToCart:" destination="P9T-vR-Zyz" eventType="touchUpInside" id="u60-7c-hCR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>

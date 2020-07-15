@@ -1,5 +1,5 @@
 //
-//  CartItemCell.swift
+//  ProductItemCell.swift
 //  ClothesStore
 //
 //  Created by Oyeleke Okiki on 7/12/20.
@@ -30,5 +30,10 @@ class ProductItemCell: UITableViewCell {
     }
 
     //TODO: Add listeners
+    @IBAction func addedItemToWishlist(_ sender: Any) {
+    }
+
+    @IBAction func addedItemToCart(_ sender: Any) {
+    }
 
 }
