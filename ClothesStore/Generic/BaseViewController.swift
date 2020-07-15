@@ -6,10 +6,9 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
 import SwiftEntryKit
 
-class BaseViewController: UITableViewController, NVActivityIndicatorViewable {
+class BaseViewController: UITableViewController {
 
     let blankFooterView = UIView()
     
