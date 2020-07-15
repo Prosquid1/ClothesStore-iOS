@@ -63,6 +63,7 @@
 		EA332F9324BEC26400ABA49A /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F9124BEC26400ABA49A /* NetworkHelper.swift */; };
 		EA332F9424BEC26400ABA49A /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F9124BEC26400ABA49A /* NetworkHelper.swift */; };
 		EA332F9A24BEC58900ABA49A /* MappedCartProductsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F9924BEC58900ABA49A /* MappedCartProductsDelegate.swift */; };
+		EA332F9C24BEE51200ABA49A /* CartCountHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F9B24BEE51200ABA49A /* CartCountHelper.swift */; };
 		EAB56D0E24B72CD3006A8225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */; };
 		EAB56D1524B72CD3006A8225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1324B72CD3006A8225 /* Main.storyboard */; };
 		EAB56D1724B72CD4006A8225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1624B72CD4006A8225 /* Assets.xcassets */; };
@@ -124,6 +125,7 @@
 		EA332F8D24BCAA9600ABA49A /* CartDataSourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDataSourcePresenter.swift; sourceTree = "<group>"; };
 		EA332F9124BEC26400ABA49A /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		EA332F9924BEC58900ABA49A /* MappedCartProductsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappedCartProductsDelegate.swift; sourceTree = "<group>"; };
+		EA332F9B24BEE51200ABA49A /* CartCountHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCountHelper.swift; sourceTree = "<group>"; };
 		EAB56D0A24B72CD3006A8225 /* ClothesStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClothesStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAB56D1424B72CD3006A8225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				EAB56D4724B9A0F7006A8225 /* CartItemsToProduct.swift */,
 				EA332F8D24BCAA9600ABA49A /* CartDataSourcePresenter.swift */,
 				EA332F9924BEC58900ABA49A /* MappedCartProductsDelegate.swift */,
+				EA332F9B24BEE51200ABA49A /* CartCountHelper.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				EA332F8A24BCA7B100ABA49A /* CSFavButton.swift in Sources */,
 				EAB56D4624B9A0E1006A8225 /* CartItem.swift in Sources */,
 				EA332F5624BA87AC00ABA49A /* ProductItemCell.swift in Sources */,
+				EA332F9C24BEE51200ABA49A /* CartCountHelper.swift in Sources */,
 				EA332F7324BB0FDF00ABA49A /* AnimationUtils.swift in Sources */,
 				EAB56D0E24B72CD3006A8225 /* AppDelegate.swift in Sources */,
 				EA332F7B24BC94C600ABA49A /* StockCountHelper.swift in Sources */,
