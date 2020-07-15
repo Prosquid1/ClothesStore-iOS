@@ -5,8 +5,6 @@
 //  Created by Oyeleke Okiki on 7/12/20.
 //  Copyright © 2020 Personal. All rights reserved.
 //
-
-import UIKit
 import FaveButton
 
 class ProductItemCell: UITableViewCell {

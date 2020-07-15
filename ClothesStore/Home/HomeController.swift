@@ -62,6 +62,7 @@ extension HomeController {
         productItemCell.selectionStyle = .none
         GenericViewConfigurator.configure(product: homePresenter.itemForRow(row: indexPath.row), genericProductView:
             productItemCell.genericProductView)
+        productItemCell.addToWishlistButton.isSelected = false
         return productItemCell
     }
 }
