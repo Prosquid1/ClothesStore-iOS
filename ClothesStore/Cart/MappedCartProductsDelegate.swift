@@ -9,6 +9,6 @@
 import Foundation
 
 protocol MappedCartProductsDelegate {
-    func cartProductsRetrieved(data: [Product])
+    func cartProductsRetrieved(data: [CartItemsToProduct])
     func cartProductsFetchingFailed(errorMessage: String)
 }
