@@ -56,6 +56,12 @@
 		EA332F8A24BCA7B100ABA49A /* CSFavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8924BCA7B100ABA49A /* CSFavButton.swift */; };
 		EA332F8B24BCA7B100ABA49A /* CSFavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8924BCA7B100ABA49A /* CSFavButton.swift */; };
 		EA332F8C24BCA7B100ABA49A /* CSFavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8924BCA7B100ABA49A /* CSFavButton.swift */; };
+		EA332F8E24BCAA9600ABA49A /* CartDataSourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8D24BCAA9600ABA49A /* CartDataSourcePresenter.swift */; };
+		EA332F8F24BCAA9600ABA49A /* CartDataSourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8D24BCAA9600ABA49A /* CartDataSourcePresenter.swift */; };
+		EA332F9024BCAA9600ABA49A /* CartDataSourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8D24BCAA9600ABA49A /* CartDataSourcePresenter.swift */; };
+		EA332F9224BEC26400ABA49A /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F9124BEC26400ABA49A /* NetworkHelper.swift */; };
+		EA332F9324BEC26400ABA49A /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F9124BEC26400ABA49A /* NetworkHelper.swift */; };
+		EA332F9424BEC26400ABA49A /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F9124BEC26400ABA49A /* NetworkHelper.swift */; };
 		EAB56D0E24B72CD3006A8225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */; };
 		EAB56D1524B72CD3006A8225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1324B72CD3006A8225 /* Main.storyboard */; };
 		EAB56D1724B72CD4006A8225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1624B72CD4006A8225 /* Assets.xcassets */; };
@@ -114,6 +120,8 @@
 		EA332F7A24BC94C600ABA49A /* StockCountHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCountHelper.swift; sourceTree = "<group>"; };
 		EA332F8524BCA22400ABA49A /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		EA332F8924BCA7B100ABA49A /* CSFavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSFavButton.swift; sourceTree = "<group>"; };
+		EA332F8D24BCAA9600ABA49A /* CartDataSourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDataSourcePresenter.swift; sourceTree = "<group>"; };
+		EA332F9124BEC26400ABA49A /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		EAB56D0A24B72CD3006A8225 /* ClothesStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClothesStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAB56D1424B72CD3006A8225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -267,6 +275,7 @@
 				EA332F3724BA6EA900ABA49A /* CartController.swift */,
 				EAB56D4524B9A0E1006A8225 /* CartItem.swift */,
 				EAB56D4724B9A0F7006A8225 /* CartItemsToProduct.swift */,
+				EA332F8D24BCAA9600ABA49A /* CartDataSourcePresenter.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -281,6 +290,7 @@
 				EA332F7224BB0FDF00ABA49A /* AnimationUtils.swift */,
 				EA332F7A24BC94C600ABA49A /* StockCountHelper.swift */,
 				EA332F8924BCA7B100ABA49A /* CSFavButton.swift */,
+				EA332F9124BEC26400ABA49A /* NetworkHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -496,8 +506,10 @@
 				EA332F6E24BB07D500ABA49A /* UIViewController+EntryKit.swift in Sources */,
 				EA332F4E24BA813100ABA49A /* DataSourcePresenter.swift in Sources */,
 				EA332F5A24BA8B9C00ABA49A /* ServerSecrets.swift in Sources */,
+				EA332F9224BEC26400ABA49A /* NetworkHelper.swift in Sources */,
 				EA332F6224BAADD900ABA49A /* GenericProductView.swift in Sources */,
 				EA332F4C24BA7D9E00ABA49A /* UI+Extensions.swift in Sources */,
+				EA332F8E24BCAA9600ABA49A /* CartDataSourcePresenter.swift in Sources */,
 				EA332F4424BA729B00ABA49A /* AnimatedTabBarController.swift in Sources */,
 				EAB56D4824B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */,
 				EA332F2C24BA6E1400ABA49A /* RESTHelper.swift in Sources */,
@@ -518,12 +530,14 @@
 				EA332F4F24BA813100ABA49A /* DataSourcePresenter.swift in Sources */,
 				EA332F7824BB108600ABA49A /* GenericViewConfigurator.swift in Sources */,
 				EA332F4124BA6F4700ABA49A /* BaseViewController.swift in Sources */,
+				EA332F9324BEC26400ABA49A /* NetworkHelper.swift in Sources */,
 				EA332F6324BAADD900ABA49A /* GenericProductView.swift in Sources */,
 				EAB56D5B24B9B427006A8225 /* ColorUtils.swift in Sources */,
 				EAB56D4924B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */,
 				EA332F5B24BA8B9C00ABA49A /* ServerSecrets.swift in Sources */,
 				EA332F8724BCA22400ABA49A /* HomeController.swift in Sources */,
 				EA332F5724BA87AC00ABA49A /* ProductItemCell.swift in Sources */,
+				EA332F8F24BCAA9600ABA49A /* CartDataSourcePresenter.swift in Sources */,
 				EA332F4524BA729B00ABA49A /* AnimatedTabBarController.swift in Sources */,
 				EAB56D5124B9A4F9006A8225 /* String+Extensions.swift in Sources */,
 			);
@@ -542,12 +556,14 @@
 				EA332F5024BA813100ABA49A /* DataSourcePresenter.swift in Sources */,
 				EA332F7924BB108600ABA49A /* GenericViewConfigurator.swift in Sources */,
 				EA332F4224BA6F4700ABA49A /* BaseViewController.swift in Sources */,
+				EA332F9424BEC26400ABA49A /* NetworkHelper.swift in Sources */,
 				EA332F6424BAADD900ABA49A /* GenericProductView.swift in Sources */,
 				EAB56D5C24B9B427006A8225 /* ColorUtils.swift in Sources */,
 				EAB56D4A24B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */,
 				EA332F5C24BA8B9C00ABA49A /* ServerSecrets.swift in Sources */,
 				EA332F8824BCA22400ABA49A /* HomeController.swift in Sources */,
 				EA332F5824BA87AC00ABA49A /* ProductItemCell.swift in Sources */,
+				EA332F9024BCAA9600ABA49A /* CartDataSourcePresenter.swift in Sources */,
 				EA332F4624BA729B00ABA49A /* AnimatedTabBarController.swift in Sources */,
 				EAB56D5224B9A4F9006A8225 /* String+Extensions.swift in Sources */,
 			);
