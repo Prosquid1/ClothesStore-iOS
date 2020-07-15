@@ -10,8 +10,12 @@ import Foundation
 
 class CartDataSourcePresenter: DataSourcePresenter<CartItem> {
 
-    private var products = [Product]()
+    private var cartItemsToProduct = [CartItemsToProduct]()
     var mappedCartProductsDelegate: MappedCartProductsDelegate?
+
+    override var dataCount: Int {
+        get { return cartItemsToProduct.count }
+    }
     
     init(dataControllerDelegate: DataControllerDelegate,
          mappedCartProductsDelegate: MappedCartProductsDelegate) {
@@ -39,12 +43,19 @@ class CartDataSourcePresenter: DataSourcePresenter<CartItem> {
     }
 
     func queryCartItemsForProducts(cartItems: [CartItem], allProducts: [Product]) {
-        products = allProducts
-        mappedCartProductsDelegate?.cartProductsRetrieved(data: allProducts)
+        let cartItemsGroupedByProduct = Dictionary(grouping: cartItems, by: { (element: CartItem) in
+            return element.productId
+            })
+        let productIdToProductMap = Dictionary(uniqueKeysWithValues: allProducts.map{($0.id, $0)})
+
+        cartItemsToProduct = cartItemsGroupedByProduct.map{
+            CartItemsToProduct(product: productIdToProductMap[$0.key]!, cartItemIds: $0.value.map {$0.id})
+        }
+        mappedCartProductsDelegate?.cartProductsRetrieved(data: cartItemsToProduct)
     }
     
-    func productForRow(row: Int) -> Product {
-        return products[row]
+    func cartItemsToProductForRow(row: Int) -> CartItemsToProduct {
+        return cartItemsToProduct[row]
     }
     
 }
