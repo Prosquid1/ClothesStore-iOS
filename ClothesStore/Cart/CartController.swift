@@ -56,9 +56,11 @@ extension CartController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let productItemCell = tableView.dequeueReusableCell(withIdentifier: ProductItemCell.identifier) as! ProductItemCell
         productItemCell.selectionStyle = .none
-        GenericViewConfigurator.configure(product: cartPresenter.productForRow(row: indexPath.row), genericProductView: productItemCell.genericProductView)
+        GenericViewConfigurator.configure(product: cartPresenter.cartItemsToProductForRow(row: indexPath.row).product, genericProductView: productItemCell.genericProductView)
         return productItemCell
     }
+
+
 }
 
 extension CartController: DataControllerDelegate {
@@ -83,7 +85,7 @@ extension CartController: DataControllerDelegate {
 }
 
 extension CartController: MappedCartProductsDelegate {
-    func cartProductsRetrieved(data: [Product]) {
+    func cartProductsRetrieved(data: [CartItemsToProduct]) {
         tableView.separatorColor = ColorPalette.tableSeparator
         refreshViewForNewDataState()
     }
