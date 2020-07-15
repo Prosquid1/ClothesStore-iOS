@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="474" id="1Sp-nS-Odu" customClass="CartItemCell" customModule="ClothesStore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="661" height="474"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Sp-nS-Odu" id="yKG-ff-PKN">
+                <rect key="frame" x="0.0" y="0.0" width="661" height="474"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhI-Or-2yV" customClass="GenericProductView" customModule="ClothesStore" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="594.5" height="474"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdV-38-yhc">
+                        <rect key="frame" x="614.5" y="217" width="40" height="40"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="4FV-rh-yAT"/>
+                            <constraint firstAttribute="height" constant="40" id="73f-Bs-t52"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <color key="tintColor" name="primaryColor"/>
+                        <state key="normal" image="cart.badge.minus" catalog="system">
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="medium"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="yhI-Or-2yV" firstAttribute="centerY" secondItem="yKG-ff-PKN" secondAttribute="centerY" id="BJU-GX-H9Z"/>
+                    <constraint firstItem="yhI-Or-2yV" firstAttribute="trailing" secondItem="bdV-38-yhc" secondAttribute="leading" priority="600" constant="-20" id="N5D-0g-wzd"/>
+                    <constraint firstItem="yhI-Or-2yV" firstAttribute="top" secondItem="yKG-ff-PKN" secondAttribute="top" id="Q2o-lC-Xdf"/>
+                    <constraint firstItem="yhI-Or-2yV" firstAttribute="leading" secondItem="yKG-ff-PKN" secondAttribute="leading" id="XpD-ru-9BK"/>
+                    <constraint firstAttribute="trailing" secondItem="bdV-38-yhc" secondAttribute="trailing" constant="6.4000000000000004" id="e3V-N1-c8v"/>
+                    <constraint firstAttribute="bottom" secondItem="yhI-Or-2yV" secondAttribute="bottom" id="rWx-2C-fhm"/>
+                    <constraint firstItem="bdV-38-yhc" firstAttribute="centerY" secondItem="yhI-Or-2yV" secondAttribute="centerY" id="zwx-FB-7bJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="genericProductView" destination="yhI-Or-2yV" id="3Fp-Uo-gKG"/>
+            </connections>
+            <point key="canvasLocation" x="189.13043478260872" y="644.19642857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="cart.badge.minus" catalog="system" width="64" height="48"/>
+        <namedColor name="primaryColor">
+            <color red="0.47450980392156861" green="0.33333333333333331" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
