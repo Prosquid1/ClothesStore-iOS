@@ -9,13 +9,13 @@ import UIKit
 import SwiftEntryKit
 
 class HomeController: BaseViewController {
-
+    
     private var homePresenter: DataSourcePresenter<Product>!
-
+    
     private func retreiveProducts() {
         homePresenter.retrieveData(path: "products")
     }
-
+    
     override func viewDidLoad() {
         self.tabBarController?.title = "Home"
         homePresenter = DataSourcePresenter(dataControllerDelegate: self)
@@ -29,16 +29,16 @@ extension HomeController: DataControllerDelegate {
     func dataRetrieved<T>(data: [T]) {
         refreshViewForNewDataState()
     }
-
+    
     func didStartFetchingData() {
         _refreshControl.beginRefreshing()
     }
-
+    
     func dataIsEmpty() {
         refreshViewForNewDataState()
         showTopErrorNote(message: "No items available!")
     }
-
+    
     func dataFetchingFailed(errorMessage: String) {
         _refreshControl.endRefreshing()
         showTopErrorNote(message: errorMessage)
@@ -52,11 +52,11 @@ extension HomeController {
             self.retreiveProducts()
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homePresenter.dataCount
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let productItemCell = tableView.dequeueReusableCell(withIdentifier: ProductItemCell.identifier) as! ProductItemCell
         productItemCell.selectionStyle = .none
