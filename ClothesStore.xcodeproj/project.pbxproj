@@ -69,6 +69,7 @@
 		EA332FA224BEF28500ABA49A /* CartFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332FA124BEF28500ABA49A /* CartFooterView.swift */; };
 		EA332FA424BEF29500ABA49A /* CartFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA332FA324BEF29500ABA49A /* CartFooterView.xib */; };
 		EA332FA824C19F9F00ABA49A /* WishlistDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332FA724C19F9F00ABA49A /* WishlistDBManager.swift */; };
+		EA332FAB24C1A24900ABA49A /* WishListDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332FAA24C1A24900ABA49A /* WishListDAO.swift */; };
 		EAB56D0E24B72CD3006A8225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */; };
 		EAB56D1524B72CD3006A8225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1324B72CD3006A8225 /* Main.storyboard */; };
 		EAB56D1724B72CD4006A8225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1624B72CD4006A8225 /* Assets.xcassets */; };
@@ -136,6 +137,7 @@
 		EA332FA124BEF28500ABA49A /* CartFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartFooterView.swift; sourceTree = "<group>"; };
 		EA332FA324BEF29500ABA49A /* CartFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartFooterView.xib; sourceTree = "<group>"; };
 		EA332FA724C19F9F00ABA49A /* WishlistDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistDBManager.swift; sourceTree = "<group>"; };
+		EA332FAA24C1A24900ABA49A /* WishListDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListDAO.swift; sourceTree = "<group>"; };
 		EAB56D0A24B72CD3006A8225 /* ClothesStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClothesStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAB56D1424B72CD3006A8225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -216,6 +218,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		EA332FA924C1A22A00ABA49A /* Wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				EA332FA724C19F9F00ABA49A /* WishlistDBManager.swift */,
+				EA332FAA24C1A24900ABA49A /* WishListDAO.swift */,
+			);
+			path = Wishlist;
+			sourceTree = "<group>";
+		};
 		EAB56D0124B72CD3006A8225 = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +252,7 @@
 		EAB56D0C24B72CD3006A8225 /* ClothesStore */ = {
 			isa = PBXGroup;
 			children = (
+				EA332FA924C1A22A00ABA49A /* Wishlist */,
 				EA332F8424BCA1F600ABA49A /* Home */,
 				EA332F4324BA729B00ABA49A /* AnimatedTabBarController.swift */,
 				EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */,
@@ -279,7 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				EAB56D4224B9A04B006A8225 /* Product.swift */,
-				EA332FA724C19F9F00ABA49A /* WishlistDBManager.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -528,6 +539,7 @@
 				EA332F5624BA87AC00ABA49A /* ProductItemCell.swift in Sources */,
 				EA332F9C24BEE51200ABA49A /* CartCountHelper.swift in Sources */,
 				EA332F7324BB0FDF00ABA49A /* AnimationUtils.swift in Sources */,
+				EA332FAB24C1A24900ABA49A /* WishListDAO.swift in Sources */,
 				EAB56D0E24B72CD3006A8225 /* AppDelegate.swift in Sources */,
 				EA332F7B24BC94C600ABA49A /* StockCountHelper.swift in Sources */,
 				EA332F6E24BB07D500ABA49A /* UIViewController+EntryKit.swift in Sources */,
