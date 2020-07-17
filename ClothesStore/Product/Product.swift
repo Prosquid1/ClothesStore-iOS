@@ -6,9 +6,10 @@
 //  Copyright © 2020 Personal. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
 
-class Product: Codable {
+class Product: Object, Codable
+{
     var id: Int
     var name: String
     var category: String
