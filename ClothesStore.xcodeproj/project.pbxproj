@@ -70,6 +70,7 @@
 		EA332FA424BEF29500ABA49A /* CartFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA332FA324BEF29500ABA49A /* CartFooterView.xib */; };
 		EA332FA824C19F9F00ABA49A /* WishlistDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332FA724C19F9F00ABA49A /* WishlistDBManager.swift */; };
 		EA332FAB24C1A24900ABA49A /* WishListDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332FAA24C1A24900ABA49A /* WishListDAO.swift */; };
+		EA3A49E224C4AD4A0049F8B1 /* DB+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3A49E124C4AD4A0049F8B1 /* DB+Extensions.swift */; };
 		EAB56D0E24B72CD3006A8225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */; };
 		EAB56D1524B72CD3006A8225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1324B72CD3006A8225 /* Main.storyboard */; };
 		EAB56D1724B72CD4006A8225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1624B72CD4006A8225 /* Assets.xcassets */; };
@@ -138,6 +139,7 @@
 		EA332FA324BEF29500ABA49A /* CartFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartFooterView.xib; sourceTree = "<group>"; };
 		EA332FA724C19F9F00ABA49A /* WishlistDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistDBManager.swift; sourceTree = "<group>"; };
 		EA332FAA24C1A24900ABA49A /* WishListDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListDAO.swift; sourceTree = "<group>"; };
+		EA3A49E124C4AD4A0049F8B1 /* DB+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DB+Extensions.swift"; sourceTree = "<group>"; };
 		EAB56D0A24B72CD3006A8225 /* ClothesStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClothesStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAB56D1424B72CD3006A8225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				EAB56D4F24B9A4F9006A8225 /* String+Extensions.swift */,
 				EA332F4B24BA7D9E00ABA49A /* UI+Extensions.swift */,
 				EA332F6D24BB07D500ABA49A /* UIViewController+EntryKit.swift */,
+				EA3A49E124C4AD4A0049F8B1 /* DB+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				EA332F4024BA6F4700ABA49A /* BaseViewController.swift in Sources */,
 				EA332F7724BB108600ABA49A /* GenericViewConfigurator.swift in Sources */,
 				EA332F9E24BEE86200ABA49A /* CartItemCell.swift in Sources */,
+				EA3A49E224C4AD4A0049F8B1 /* DB+Extensions.swift in Sources */,
 				EAB56D5024B9A4F9006A8225 /* String+Extensions.swift in Sources */,
 				EA332F9A24BEC58900ABA49A /* CartProductsDelegate.swift in Sources */,
 				EA332F3824BA6EA900ABA49A /* CartController.swift in Sources */,
