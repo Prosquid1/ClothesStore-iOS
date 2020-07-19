@@ -6,49 +6,60 @@
 //  Copyright © 2020 Personal. All rights reserved.
 //
 
+import RealmSwift
+
+let realm = try! Realm()
+
 class WishlistDBManager: WishListDAO {
     func deleteAll() {
-        <#code#>
+        realm.deleteAll()
     }
 
     func getWishListIds() -> [Int] {
-        <#code#>
+        getWishList().map { $0.id }
     }
 
-    func getWishListItemWith(productId: Int) -> Product {
-        <#code#>
+    func getWishListItemWith(productId: Int) -> Product? {
+        return realm.object(ofType: Product.self, forPrimaryKey: productId)
     }
 
     func getProductStockCount(productId: Int) -> Int {
-        <#code#>
+        let product = getWishListItemWith(productId: productId)
+        return product?.stock ?? 0
     }
 
     func addToWishList(it: Product) {
-        <#code#>
+        realm.add(it)
     }
 
     func insertWishListProducts(it: [Product]) {
-        <#code#>
+        realm.add(it)
     }
 
     func removeFromWishList(productId: Int) {
-        <#code#>
+        let product = getWishListItemWith(productId: productId)
+        if let safeProduct = product {
+            realm.delete(safeProduct)
+        }
     }
 
     func decrementProductStockCount(productId: Int) {
-        <#code#>
+        let product = getWishListItemWith(productId: productId)
+        if let safeProduct = product {
+            realm.delete(safeProduct)
+        }
     }
 
     func getLiveWishListIds() -> [Int] {
-        <#code#>
+        return []
     }
 
     func getWishList() -> [Product] {
-        <#code#>
+        realm.objects(Product.self).toArray()
     }
 
     func getWishListCount() -> Int {
-        <#code#>
+        realm.objects(Product.self).count
     }
 
 

@@ -13,7 +13,7 @@ protocol WishListDAO {
 
     func getWishListIds() -> [Int]
 
-    func getWishListItemWith(productId: Int) -> Product
+    func getWishListItemWith(productId: Int) -> Product?
 
     func getProductStockCount(productId: Int) -> Int
 
