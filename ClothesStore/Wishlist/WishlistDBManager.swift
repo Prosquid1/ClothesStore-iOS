@@ -8,11 +8,11 @@
 
 import RealmSwift
 
-let realm = try! Realm()
+private let realm = try? Realm()
 
 class WishlistDBManager: WishListDAO {
     func deleteAll() {
-        realm.deleteAll()
+        realm?.deleteAll()
     }
 
     func getWishListIds() -> [Int] {
@@ -20,7 +20,7 @@ class WishlistDBManager: WishListDAO {
     }
 
     func getWishListItemWith(productId: Int) -> Product? {
-        return realm.object(ofType: Product.self, forPrimaryKey: productId)
+        return realm?.object(ofType: Product.self, forPrimaryKey: productId)
     }
 
     func getProductStockCount(productId: Int) -> Int {
@@ -29,24 +29,24 @@ class WishlistDBManager: WishListDAO {
     }
 
     func addToWishList(it: Product) {
-        realm.add(it)
+        realm?.add(it)
     }
 
     func insertWishListProducts(it: [Product]) {
-        realm.add(it)
+        realm?.add(it)
     }
 
     func removeFromWishList(productId: Int) {
         let product = getWishListItemWith(productId: productId)
         if let safeProduct = product {
-            realm.delete(safeProduct)
+            realm?.delete(safeProduct)
         }
     }
 
     func decrementProductStockCount(productId: Int) {
         let product = getWishListItemWith(productId: productId)
         if let safeProduct = product {
-            realm.delete(safeProduct)
+            realm?.delete(safeProduct)
         }
     }
 
@@ -55,11 +55,11 @@ class WishlistDBManager: WishListDAO {
     }
 
     func getWishList() -> [Product] {
-        realm.objects(Product.self).toArray()
+        realm?.objects(Product.self).toArray() ?? []
     }
 
     func getWishListCount() -> Int {
-        realm.objects(Product.self).count
+        realm?.objects(Product.self).count ?? 0
     }
 
 
