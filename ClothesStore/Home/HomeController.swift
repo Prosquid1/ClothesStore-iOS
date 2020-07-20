@@ -38,7 +38,7 @@ extension HomeController: CartUpdateDelegate {
 }
 
 
-extension HomeController: DataControllerDelegate {
+extension HomeController: DataSourceDelegate {
     func dataRetrieved<T>(data: [T]) {
         refreshViewForNewDataState()
     }
@@ -76,14 +76,16 @@ extension HomeController {
         let product = homePresenter.itemForRow(row: indexPath.row)
         GenericViewConfigurator.configure(product: product, genericProductView:
             productItemCell.genericProductView)
-        productItemCell.addToWishlistButton.isSelected = false
+        productItemCell.addToWishlistButton.isSelected = homePresenter.isItemInWishList(productId: product.id)
 
         productItemCell.addedItemToCart = { [weak self] in
             self?.homePresenter.addToCart(id: product.id)
         }
 
         productItemCell.addedItemToWishList = { [weak self] in
-            //self?.homePresenter.addToCart(id: product.id)
+            productItemCell.addToWishlistButton.isSelected ?
+                self?.homePresenter.removeFromWishList(product: product) :
+                self?.homePresenter.addToWishList(product: product)
         }
 
         return productItemCell
