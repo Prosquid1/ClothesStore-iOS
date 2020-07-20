@@ -39,7 +39,7 @@ extension UIViewController {
     // Bumps a standard note
 
     func showTopSuccessNote(_ message: String) {
-        showTopMessageNote(message: message, messageEKColor:  EKColor(.green))
+        showTopMessageNote(message: message, messageEKColor:  EKColor(ColorPalette.topNoteSuccessGreen))
     }
 
     func showTopErrorNote(_ message: String) {
