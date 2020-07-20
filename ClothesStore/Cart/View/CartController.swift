@@ -22,7 +22,8 @@ class CartController: BaseViewController {
         
         self.tabBarController?.title = "My Cart"
         cartPresenter = CartPresenter(dataControllerDelegate: self,
-                                                cartProductsDelegate: self)
+                                      cartUpdateDelegate: self,
+                                      cartProductsDelegate: self)
         super.viewDidLoad()
         cartFooterView.isHidden = true
         configureTableView()
@@ -30,6 +31,18 @@ class CartController: BaseViewController {
     }
 
 }
+
+extension CartController: CartUpdateDelegate {
+    func onCartUpdateSuccess(message: String) {
+        showTopSuccessNote(message)
+        retreiveCart()
+    }
+
+    func onCartUpdateFailed(reason: String) {
+        showTopErrorNote(reason)
+    }
+}
+
 
 //TableView extensions
 extension CartController {
@@ -70,12 +83,12 @@ extension CartController: DataControllerDelegate {
     func dataIsEmpty() {
         refreshViewForNewDataState()
         cartFooterView.isHidden = true
-        showTopErrorNote(message: "No items available!")
+        showTopErrorNote("No items available!")
     }
     
     func dataFetchingFailed(errorMessage: String) {
         _refreshControl.endRefreshing()
-        showTopErrorNote(message: errorMessage)
+        showTopErrorNote(errorMessage)
     }
 }
 
@@ -88,7 +101,7 @@ extension CartController: CartProductsDelegate {
     func cartProductsFetchingFailed(errorMessage: String) {
         _refreshControl.endRefreshing()
         cartFooterView.isHidden = true
-        showTopErrorNote(message: "No items available!")
+        showTopErrorNote("No items available!")
     }
     func cartValueComputed(formattedValue: String) {
         cartFooterView.productTotalAmountLabel.text = formattedValue

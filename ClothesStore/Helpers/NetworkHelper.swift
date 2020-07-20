@@ -9,7 +9,10 @@
 import SwiftyJSON
 import Alamofire
 
-struct CSEmpty: Codable {}
+struct AddToCartResponse: Codable {
+    var message: String
+}
+struct CSEmptyRespone: Codable {}
 
 class NetworkHelper<T> where T: Codable {
     static func makeRequest(path: String,

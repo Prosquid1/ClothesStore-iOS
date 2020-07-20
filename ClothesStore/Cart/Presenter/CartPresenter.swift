@@ -18,13 +18,17 @@ class CartPresenter: DataSourcePresenter<CartItem> {
     }
     
     init(dataControllerDelegate: DataControllerDelegate,
+         cartUpdateDelegate: CartUpdateDelegate,
          cartProductsDelegate: CartProductsDelegate) {
-        super.init(dataControllerDelegate: dataControllerDelegate)
+        super.init(dataControllerDelegate: dataControllerDelegate,
+                   cartUpdateDelegate: cartUpdateDelegate)
         self.cartProductsDelegate = cartProductsDelegate
     }
     
-    required init(dataControllerDelegate: DataControllerDelegate) {
-        super.init(dataControllerDelegate: dataControllerDelegate)
+    required init(dataControllerDelegate: DataControllerDelegate,
+                  cartUpdateDelegate: CartUpdateDelegate) {
+        super.init(dataControllerDelegate: dataControllerDelegate,
+                   cartUpdateDelegate: cartUpdateDelegate)
     }
     
     func fetchProductsForMapping(cartItems: [CartItem]) {

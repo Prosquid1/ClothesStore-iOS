@@ -18,12 +18,25 @@ class HomeController: BaseViewController {
     
     override func viewDidLoad() {
         self.tabBarController?.title = "Home"
-        homePresenter = DataSourcePresenter(dataControllerDelegate: self)
+        homePresenter = DataSourcePresenter(dataControllerDelegate: self,
+                                            cartUpdateDelegate: self)
         super.viewDidLoad()
         configureTableView()
         retreiveProducts()
     }
 }
+
+extension HomeController: CartUpdateDelegate {
+    func onCartUpdateSuccess(message: String) {
+        showTopSuccessNote(message)
+        retreiveProducts()
+    }
+
+    func onCartUpdateFailed(reason: String) {
+        showTopErrorNote(reason)
+    }
+}
+
 
 extension HomeController: DataControllerDelegate {
     func dataRetrieved<T>(data: [T]) {
@@ -36,12 +49,12 @@ extension HomeController: DataControllerDelegate {
     
     func dataIsEmpty() {
         refreshViewForNewDataState()
-        showTopErrorNote(message: "No items available!")
+        showTopErrorNote("No items available!")
     }
     
     func dataFetchingFailed(errorMessage: String) {
         _refreshControl.endRefreshing()
-        showTopErrorNote(message: errorMessage)
+        showTopErrorNote(errorMessage)
     }
 }
 
@@ -60,9 +73,19 @@ extension HomeController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let productItemCell = tableView.dequeueReusableCell(withIdentifier: ProductItemCell.identifier) as! ProductItemCell
         productItemCell.selectionStyle = .none
-        GenericViewConfigurator.configure(product: homePresenter.itemForRow(row: indexPath.row), genericProductView:
+        let product = homePresenter.itemForRow(row: indexPath.row)
+        GenericViewConfigurator.configure(product: product, genericProductView:
             productItemCell.genericProductView)
         productItemCell.addToWishlistButton.isSelected = false
+
+        productItemCell.addedItemToCart = { [weak self] in
+            self?.homePresenter.addToCart(id: product.id)
+        }
+
+        productItemCell.addedItemToWishList = { [weak self] in
+            //self?.homePresenter.addToCart(id: product.id)
+        }
+
         return productItemCell
     }
 }

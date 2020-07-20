@@ -63,12 +63,12 @@ class DataSourcePresenter<T> where T: Codable {
     }
 
     func addToCart(id: Int) {
-        NetworkHelper<String>.makeRequest(path: "cart",
-                                       method: .post,
-                                       params: ["productId": id],
-                                       onSuccess: {
-            [weak self] response in
-                                        self?.cartUpdateDelegate.onCartUpdateSuccess(message: response)
+        NetworkHelper<AddToCartResponse>.makeRequest(path: "cart",
+                                                     method: .post,
+                                                     params: ["productId": id],
+                                                     onSuccess: {
+                                                        [weak self] response in
+                                                        self?.cartUpdateDelegate.onCartUpdateSuccess(message: response.message)
         }){ [weak self] errorMessage in
             self?.cartUpdateDelegate.onCartUpdateFailed(reason: errorMessage)
 
@@ -76,12 +76,12 @@ class DataSourcePresenter<T> where T: Codable {
     }
 
     func deleteFromCart(id: Int) {
-        NetworkHelper<CSEmpty>.makeRequest(path: "cart",
-                                       method: .delete,
-                                       params: ["productId": id],
-                                       onSuccess: {
-            [weak self] response in
-                                        self?.cartUpdateDelegate.onCartUpdateSuccess(message: "Deleted successfully!")
+        NetworkHelper<CSEmptyRespone>.makeRequest(path: "cart",
+                                                  method: .delete,
+                                                  params: ["productId": id],
+                                                  onSuccess: {
+                                                    [weak self] response in
+                                                    self?.cartUpdateDelegate.onCartUpdateSuccess(message: "Deleted successfully!")
         }){ [weak self] errorMessage in
             self?.cartUpdateDelegate.onCartUpdateFailed(reason: errorMessage)
 
