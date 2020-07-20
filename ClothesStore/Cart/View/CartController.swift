@@ -10,7 +10,7 @@ import SwiftEntryKit
 
 class CartController: BaseViewController {
     
-    private var cartPresenter: CartDataSourcePresenter!
+    private var cartPresenter: CartPresenter!
     
     let cartFooterView = CartFooterView()
     
@@ -21,7 +21,7 @@ class CartController: BaseViewController {
     override func viewDidLoad() {
         
         self.tabBarController?.title = "My Cart"
-        cartPresenter = CartDataSourcePresenter(dataControllerDelegate: self,
+        cartPresenter = CartPresenter(dataControllerDelegate: self,
                                                 cartProductsDelegate: self)
         super.viewDidLoad()
         cartFooterView.isHidden = true

@@ -1,5 +1,5 @@
 //
-//  CartDataSourcePresenter.swift
+//  CartPresenter.swift
 //  ClothesStore
 //
 //  Created by Oyeleke Okiki on 7/13/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CartDataSourcePresenter: DataSourcePresenter<CartItem> {
+class CartPresenter: DataSourcePresenter<CartItem> {
 
     private var cartItemsToProduct = [CartItemsToProduct]()
     var cartProductsDelegate: CartProductsDelegate?
