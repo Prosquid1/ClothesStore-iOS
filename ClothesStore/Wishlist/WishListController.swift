@@ -17,11 +17,15 @@ class WishListController: BaseViewController {
     }
 
     override func viewDidLoad() {
-        self.tabBarController?.title = "Wishlist"
+        super.viewDidLoad()
         wishListPresenter = WishlistPresenter(dataControllerDelegate: self,
                                             cartUpdateDelegate: self)
-        super.viewDidLoad()
         configureTableView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.title = "My Wishlist"
         retreiveWishList()
     }
 }
@@ -76,16 +80,18 @@ extension WishListController {
         let product = wishListPresenter.itemForRow(row: indexPath.row)
         GenericViewConfigurator.configure(product: product, genericProductView:
             productItemCell.genericProductView)
-        productItemCell.addToWishlistButton.isSelected = wishListPresenter.isItemInWishList(productId: product.id)
+        productItemCell.addToWishlistButton.setSelected(selected: true, animated: false)
+
+        productItemCell.addToCartButton.isEnabled = product.stock != 0
+        productItemCell.addToCartButton.alpha = product.stock == 0 ? 0.4 : 1
 
         productItemCell.addedItemToCart = { [weak self] in
             self?.wishListPresenter.addToCart(id: product.id)
         }
 
         productItemCell.addedItemToWishList = { [weak self] in
-            productItemCell.addToWishlistButton.isSelected ?
-                self?.wishListPresenter.removeFromWishList(product: product) :
-                self?.wishListPresenter.addToWishList(product: product)
+                self?.wishListPresenter.removeFromWishList(product: product)
+                self?.retreiveWishList()
         }
 
         return productItemCell

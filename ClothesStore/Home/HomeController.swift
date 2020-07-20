@@ -8,7 +8,6 @@
 import UIKit
 
 class HomeController: BaseViewController {
-    
     private var homePresenter: DataSourcePresenter<Product>!
     
     private func retreiveProducts() {
@@ -16,11 +15,16 @@ class HomeController: BaseViewController {
     }
     
     override func viewDidLoad() {
-        self.tabBarController?.title = "Home"
+        super.viewDidLoad()
         homePresenter = DataSourcePresenter(dataControllerDelegate: self,
                                             cartUpdateDelegate: self)
-        super.viewDidLoad()
         configureTableView()
+
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.title = "Home"
         retreiveProducts()
     }
 }
@@ -75,7 +79,10 @@ extension HomeController {
         let product = homePresenter.itemForRow(row: indexPath.row)
         GenericViewConfigurator.configure(product: product, genericProductView:
             productItemCell.genericProductView)
-        productItemCell.addToWishlistButton.isSelected = homePresenter.isItemInWishList(productId: product.id)
+        productItemCell.addToWishlistButton.setSelected(selected: homePresenter.isItemInWishList(productId: product.id), animated: false)
+
+        productItemCell.addToCartButton.isEnabled = product.stock != 0
+        productItemCell.addToCartButton.alpha = product.stock == 0 ? 0.4 : 1
 
         productItemCell.addedItemToCart = { [weak self] in
             self?.homePresenter.addToCart(id: product.id)
