@@ -23,14 +23,9 @@ class WishlistDBManager: WishListDAO {
         return realm?.object(ofType: Product.self, forPrimaryKey: productId)
     }
 
-    func getProductStockCount(productId: Int) -> Int {
-        let product = getWishListItemWith(productId: productId)
-        return product?.stock ?? 0
-    }
-
     func addToWishList(it: Product) {
         try? realm?.write {
-            realm?.add(it)
+            realm?.create(Product.self, value: it, update: .all)
         }
     }
 
@@ -40,18 +35,13 @@ class WishlistDBManager: WishListDAO {
         }
     }
 
-    func removeFromWishList(product: Product) {
-        try? realm?.write {
-            realm?.delete(product)
-        }
-    }
-
-    func decrementProductStockCount(productId: Int) {
+    func removeFromWishList(productId: Int) {
         try? realm?.write {
             let product = getWishListItemWith(productId: productId)
             if let safeProduct = product {
                 realm?.delete(safeProduct)
             }
+
         }
     }
 
@@ -62,6 +52,5 @@ class WishlistDBManager: WishListDAO {
     func getWishListCount() -> Int {
         realm?.objects(Product.self).count ?? 0
     }
-
 
 }
