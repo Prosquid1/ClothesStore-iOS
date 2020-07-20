@@ -11,10 +11,6 @@ import RealmSwift
 class WishlistDBManager: WishListDAO {
     private let realm = try? Realm()
 
-    func deleteAll() {
-        realm?.deleteAll()
-    }
-
     func getWishListIds() -> [Int] {
         getWishList().map { $0.id }
     }
