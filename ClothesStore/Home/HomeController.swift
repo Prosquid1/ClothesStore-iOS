@@ -10,10 +10,6 @@ import UIKit
 class HomeController: BaseViewController {
     private var homePresenter: DataSourcePresenter<Product>!
     
-    private func retreiveProducts() {
-        homePresenter.retrieveData(path: "products")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         homePresenter = DataSourcePresenter(dataControllerDelegate: self,
@@ -25,14 +21,19 @@ class HomeController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.title = "Home"
-        retreiveProducts()
+        fetchData()
+    }
+
+    private func fetchData() {
+        homePresenter.refreshWishListIds()
+        homePresenter.retrieveData(path: "products")
     }
 }
 
 extension HomeController: CartUpdateDelegate {
     func onCartUpdateSuccess(message: String) {
         showTopSuccessNote(message)
-        retreiveProducts()
+        fetchData()
     }
 
     func onCartUpdateFailed(reason: String) {
@@ -65,7 +66,7 @@ extension HomeController {
     private func configureTableView() {
         tableView.register(UINib.init(nibName: "ProductItemCell", bundle: nil), forCellReuseIdentifier: ProductItemCell.identifier)
         refreshStarted = { [unowned self] in
-            self.retreiveProducts()
+            self.fetchData()
         }
     }
     
