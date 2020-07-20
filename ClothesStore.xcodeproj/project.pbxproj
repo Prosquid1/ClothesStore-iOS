@@ -264,6 +264,47 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		EA3A49EA24C5B7810049F8B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EAB56D4224B9A04B006A8225 /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EA3A49EB24C5B7860049F8B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EA332F7624BB108600ABA49A /* GenericViewConfigurator.swift */,
+				EA332F5D24BAAD3800ABA49A /* GenericProductView.xib */,
+				EA332F6124BAADD900ABA49A /* GenericProductView.swift */,
+				EA332F5524BA87AC00ABA49A /* ProductItemCell.swift */,
+				EA332F6924BAB86600ABA49A /* ProductItemCell.xib */,
+				EA332F3F24BA6F4700ABA49A /* BaseViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EA3A49EC24C5B78B0049F8B1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				EA332F4D24BA813100ABA49A /* DataSourcePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EA3A49ED24C5B83A0049F8B1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */,
+				EA332F4324BA729B00ABA49A /* AnimatedTabBarController.swift */,
+				EAB56D1324B72CD3006A8225 /* Main.storyboard */,
+				EAB56D1824B72CD4006A8225 /* LaunchScreen.storyboard */,
+				EAB56D1624B72CD4006A8225 /* Assets.xcassets */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		EAB56D0124B72CD3006A8225 = {
 			isa = PBXGroup;
 			children = (
@@ -289,18 +330,12 @@
 		EAB56D0C24B72CD3006A8225 /* ClothesStore */ = {
 			isa = PBXGroup;
 			children = (
-				EA332FA924C1A22A00ABA49A /* Wishlist */,
-				EA332F8424BCA1F600ABA49A /* Home */,
-				EA332F4324BA729B00ABA49A /* AnimatedTabBarController.swift */,
-				EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */,
-				EAB56D4424B9A0D5006A8225 /* Cart */,
-				EA332F7124BB0B9E00ABA49A /* Extensions */,
+				EA3A49ED24C5B83A0049F8B1 /* App */,
 				EAB56D6124B9E03A006A8225 /* Generic */,
+				EA332F8424BCA1F600ABA49A /* Home */,
+				EA332FA924C1A22A00ABA49A /* Wishlist */,
+				EAB56D4424B9A0D5006A8225 /* Cart */,
 				EAB56D5824B9B419006A8225 /* Helpers */,
-				EAB56D3D24B99FC1006A8225 /* Product */,
-				EAB56D1324B72CD3006A8225 /* Main.storyboard */,
-				EAB56D1824B72CD4006A8225 /* LaunchScreen.storyboard */,
-				EAB56D1624B72CD4006A8225 /* Assets.xcassets */,
 				EAB56D1B24B72CD4006A8225 /* Info.plist */,
 			);
 			path = ClothesStore;
@@ -324,14 +359,6 @@
 			path = ClothesStoreUITests;
 			sourceTree = "<group>";
 		};
-		EAB56D3D24B99FC1006A8225 /* Product */ = {
-			isa = PBXGroup;
-			children = (
-				EAB56D4224B9A04B006A8225 /* Product.swift */,
-			);
-			path = Product;
-			sourceTree = "<group>";
-		};
 		EAB56D4424B9A0D5006A8225 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +374,7 @@
 		EAB56D5824B9B419006A8225 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				EA332F7124BB0B9E00ABA49A /* Extensions */,
 				EA332F3324BA6E6200ABA49A /* ColorPalette.swift */,
 				EAB56D5924B9B427006A8225 /* ColorUtils.swift */,
 				EA332F2B24BA6E1400ABA49A /* RESTHelper.swift */,
@@ -362,13 +390,9 @@
 		EAB56D6124B9E03A006A8225 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
-				EA332F5524BA87AC00ABA49A /* ProductItemCell.swift */,
-				EA332F6924BAB86600ABA49A /* ProductItemCell.xib */,
-				EA332F3F24BA6F4700ABA49A /* BaseViewController.swift */,
-				EA332F4D24BA813100ABA49A /* DataSourcePresenter.swift */,
-				EA332F5D24BAAD3800ABA49A /* GenericProductView.xib */,
-				EA332F6124BAADD900ABA49A /* GenericProductView.swift */,
-				EA332F7624BB108600ABA49A /* GenericViewConfigurator.swift */,
+				EA3A49EA24C5B7810049F8B1 /* Model */,
+				EA3A49EB24C5B7860049F8B1 /* View */,
+				EA3A49EC24C5B78B0049F8B1 /* Presenter */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
