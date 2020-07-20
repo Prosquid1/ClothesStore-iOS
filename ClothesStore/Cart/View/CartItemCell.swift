@@ -14,9 +14,10 @@ class CartItemCell: UITableViewCell {
     public static let identifier = "CartItemCellID"
     @IBOutlet weak var genericProductView: GenericProductView!
 
-    @IBOutlet weak var removeFromCartButton: UIButton!
+    var removedItemFromCart: (() -> ())?
 
     @IBAction func removedItemFromCart(_ sender: Any) {
+        removedItemFromCart?()
     }
 
 }

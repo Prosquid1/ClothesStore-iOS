@@ -62,6 +62,9 @@ extension CartController {
         cartItemCell.selectionStyle = .none
         let cartItemToProduct = cartPresenter.cartItemsToProductForRow(row: indexPath.row)
         GenericViewConfigurator.configure(product: cartItemToProduct.product, productsInCartCount: cartItemToProduct.cartItemIds.count, genericProductView: cartItemCell.genericProductView)
+        cartItemCell.removedItemFromCart = { [weak self] in
+            self?.cartPresenter.deleteFromCart(id: cartItemToProduct.product.id)
+        }
         return cartItemCell
     }
 

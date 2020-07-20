@@ -32,6 +32,9 @@
                         <state key="normal" image="cart.badge.minus" catalog="system">
                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="medium"/>
                         </state>
+                        <connections>
+                            <action selector="removedItemFromCart:" destination="1Sp-nS-Odu" eventType="touchUpInside" id="JJn-Fh-66x"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
