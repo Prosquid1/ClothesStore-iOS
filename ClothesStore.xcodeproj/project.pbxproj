@@ -76,6 +76,9 @@
 		EA3A49E624C4B0040049F8B1 /* WishlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3A49E324C4B0040049F8B1 /* WishlistPresenter.swift */; };
 		EA3A49EF24C61A9E0049F8B1 /* DataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3A49EE24C61A9D0049F8B1 /* DataSourceDelegate.swift */; };
 		EA3A49F124C61ABB0049F8B1 /* CartUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3A49F024C61ABB0049F8B1 /* CartUpdateDelegate.swift */; };
+		EA3A49F324C61C550049F8B1 /* WishListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3A49F224C61C550049F8B1 /* WishListController.swift */; };
+		EA3A49F424C61C550049F8B1 /* WishListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3A49F224C61C550049F8B1 /* WishListController.swift */; };
+		EA3A49F524C61C550049F8B1 /* WishListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3A49F224C61C550049F8B1 /* WishListController.swift */; };
 		EAB56D0E24B72CD3006A8225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */; };
 		EAB56D1524B72CD3006A8225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1324B72CD3006A8225 /* Main.storyboard */; };
 		EAB56D1724B72CD4006A8225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1624B72CD4006A8225 /* Assets.xcassets */; };
@@ -148,6 +151,7 @@
 		EA3A49E324C4B0040049F8B1 /* WishlistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistPresenter.swift; sourceTree = "<group>"; };
 		EA3A49EE24C61A9D0049F8B1 /* DataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceDelegate.swift; sourceTree = "<group>"; };
 		EA3A49F024C61ABB0049F8B1 /* CartUpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartUpdateDelegate.swift; sourceTree = "<group>"; };
+		EA3A49F224C61C550049F8B1 /* WishListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListController.swift; sourceTree = "<group>"; };
 		EAB56D0A24B72CD3006A8225 /* ClothesStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClothesStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAB56D1424B72CD3006A8225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 				EA332FA724C19F9F00ABA49A /* WishlistDBManager.swift */,
 				EA332FAA24C1A24900ABA49A /* WishListDAO.swift */,
 				EA3A49E324C4B0040049F8B1 /* WishlistPresenter.swift */,
+				EA3A49F224C61C550049F8B1 /* WishListController.swift */,
 			);
 			path = Wishlist;
 			sourceTree = "<group>";
@@ -595,6 +600,7 @@
 				EA332F9E24BEE86200ABA49A /* CartItemCell.swift in Sources */,
 				EA3A49E224C4AD4A0049F8B1 /* DB+Extensions.swift in Sources */,
 				EAB56D5024B9A4F9006A8225 /* String+Extensions.swift in Sources */,
+				EA3A49F324C61C550049F8B1 /* WishListController.swift in Sources */,
 				EA3A49E424C4B0040049F8B1 /* WishlistPresenter.swift in Sources */,
 				EA332F9A24BEC58900ABA49A /* CartProductsDelegate.swift in Sources */,
 				EA332F3824BA6EA900ABA49A /* CartController.swift in Sources */,
@@ -629,6 +635,7 @@
 			files = (
 				EA332F7424BB0FDF00ABA49A /* AnimationUtils.swift in Sources */,
 				EA332F6F24BB07D500ABA49A /* UIViewController+EntryKit.swift in Sources */,
+				EA3A49F424C61C550049F8B1 /* WishListController.swift in Sources */,
 				EA332F2D24BA6E1400ABA49A /* RESTHelper.swift in Sources */,
 				EAB56D2524B72CD5006A8225 /* ClothesStoreTests.swift in Sources */,
 				EA332F8B24BCA7B100ABA49A /* CSFavButton.swift in Sources */,
@@ -656,6 +663,7 @@
 			files = (
 				EA332F7524BB0FDF00ABA49A /* AnimationUtils.swift in Sources */,
 				EA332F7024BB07D500ABA49A /* UIViewController+EntryKit.swift in Sources */,
+				EA3A49F524C61C550049F8B1 /* WishListController.swift in Sources */,
 				EA332F2E24BA6E1400ABA49A /* RESTHelper.swift in Sources */,
 				EAB56D3024B72CD5006A8225 /* ClothesStoreUITests.swift in Sources */,
 				EA332F8C24BCA7B100ABA49A /* CSFavButton.swift in Sources */,

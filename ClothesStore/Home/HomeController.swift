@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftEntryKit
 
 class HomeController: BaseViewController {
     
