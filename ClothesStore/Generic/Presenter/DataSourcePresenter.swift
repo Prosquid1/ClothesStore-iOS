@@ -11,10 +11,8 @@ class DataSourcePresenter<T> where T: Codable {
     let wishlistManager: WishListDAO = WishlistDBManager()
 
     private lazy var wishListIds = {
-        return wishlistManager.getLiveWishListIds()
+        return wishlistManager.getWishListIds()
     }()
-
-    
 
     private var data = [T]()
 
@@ -29,6 +27,10 @@ class DataSourcePresenter<T> where T: Codable {
                   cartUpdateDelegate: CartUpdateDelegate ) {
         self.dataControllerDelegate = dataControllerDelegate
         self.cartUpdateDelegate = cartUpdateDelegate
+    }
+
+    func itemForRow(row: Int) -> T {
+        return data[row]
     }
 
 }
@@ -98,9 +100,6 @@ extension DataSourcePresenter {
 
 //UI source
 extension DataSourcePresenter {
-    func itemForRow(row: Int) -> T {
-        return data[row]
-    }
 
     func setupUIWithFetch() {
         retrieveData()

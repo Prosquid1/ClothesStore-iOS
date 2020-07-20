@@ -8,9 +8,9 @@
 
 import RealmSwift
 
-private let realm = try? Realm()
-
 class WishlistDBManager: WishListDAO {
+    private let realm = try? Realm()
+
     func deleteAll() {
         realm?.deleteAll()
     }
@@ -56,10 +56,6 @@ class WishlistDBManager: WishListDAO {
                 realm?.delete(safeProduct)
             }
         }
-    }
-
-    func getLiveWishListIds() -> [Int] {
-        return []
     }
 
     func getWishList() -> [Product] {

@@ -12,9 +12,13 @@ class WishlistPresenter: DataSourcePresenter<Product> {
     private lazy var wishList = {
         return wishlistManager.getWishList()
     }()
-    
+
     override var dataCount: Int {
         get { return wishList.count }
+    }
+
+    override func itemForRow(row: Int) -> Product {
+        return wishList[row]
     }
 
     func getWishListItems() {

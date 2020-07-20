@@ -10,10 +10,14 @@ import RealmSwift
 
 class Product: Object, Codable
 {
-    @objc var id: Int
-    @objc var name: String
-    @objc var category: String
-    @objc var price: String?
-    @objc var oldPrice: String?
-    @objc var stock: Int
+    @objc dynamic var id: Int
+    @objc dynamic var name: String
+    @objc dynamic var category: String
+    @objc dynamic var price: String?
+    @objc dynamic var oldPrice: String?
+    @objc dynamic var stock: Int
+
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 }

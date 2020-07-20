@@ -83,8 +83,9 @@ extension HomeController {
 
         productItemCell.addedItemToWishList = { [weak self] in
             productItemCell.addToWishlistButton.isSelected ?
-                self?.homePresenter.removeFromWishList(product: product) :
-                self?.homePresenter.addToWishList(product: product)
+                self?.homePresenter.addToWishList(product: product):
+                self?.homePresenter.removeFromWishList(product: product)
+
         }
 
         return productItemCell

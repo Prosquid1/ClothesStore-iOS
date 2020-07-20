@@ -25,8 +25,6 @@ protocol WishListDAO {
 
     func decrementProductStockCount(productId: Int)
 
-    func getLiveWishListIds() -> [Int]
-
     func getWishList() -> [Product]
 
     func getWishListCount() -> Int
