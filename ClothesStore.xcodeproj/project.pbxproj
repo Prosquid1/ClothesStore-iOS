@@ -74,6 +74,8 @@
 		EA3A49E424C4B0040049F8B1 /* WishlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3A49E324C4B0040049F8B1 /* WishlistPresenter.swift */; };
 		EA3A49E524C4B0040049F8B1 /* WishlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3A49E324C4B0040049F8B1 /* WishlistPresenter.swift */; };
 		EA3A49E624C4B0040049F8B1 /* WishlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3A49E324C4B0040049F8B1 /* WishlistPresenter.swift */; };
+		EA3A49EF24C61A9E0049F8B1 /* DataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3A49EE24C61A9D0049F8B1 /* DataSourceDelegate.swift */; };
+		EA3A49F124C61ABB0049F8B1 /* CartUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3A49F024C61ABB0049F8B1 /* CartUpdateDelegate.swift */; };
 		EAB56D0E24B72CD3006A8225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */; };
 		EAB56D1524B72CD3006A8225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1324B72CD3006A8225 /* Main.storyboard */; };
 		EAB56D1724B72CD4006A8225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1624B72CD4006A8225 /* Assets.xcassets */; };
@@ -144,6 +146,8 @@
 		EA332FAA24C1A24900ABA49A /* WishListDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListDAO.swift; sourceTree = "<group>"; };
 		EA3A49E124C4AD4A0049F8B1 /* DB+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DB+Extensions.swift"; sourceTree = "<group>"; };
 		EA3A49E324C4B0040049F8B1 /* WishlistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistPresenter.swift; sourceTree = "<group>"; };
+		EA3A49EE24C61A9D0049F8B1 /* DataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceDelegate.swift; sourceTree = "<group>"; };
+		EA3A49F024C61ABB0049F8B1 /* CartUpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartUpdateDelegate.swift; sourceTree = "<group>"; };
 		EAB56D0A24B72CD3006A8225 /* ClothesStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClothesStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAB56D1424B72CD3006A8225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				EA332F8D24BCAA9600ABA49A /* CartPresenter.swift */,
+				EA3A49F024C61ABB0049F8B1 /* CartUpdateDelegate.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				EA3A49EA24C5B7810049F8B1 /* Model */,
 				EA3A49EB24C5B7860049F8B1 /* View */,
 				EA3A49EC24C5B78B0049F8B1 /* Presenter */,
+				EA3A49EE24C61A9D0049F8B1 /* DataSourceDelegate.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -602,6 +608,7 @@
 				EA332F7B24BC94C600ABA49A /* StockCountHelper.swift in Sources */,
 				EA332F6E24BB07D500ABA49A /* UIViewController+EntryKit.swift in Sources */,
 				EA332F4E24BA813100ABA49A /* DataSourcePresenter.swift in Sources */,
+				EA3A49EF24C61A9E0049F8B1 /* DataSourceDelegate.swift in Sources */,
 				EA332F5A24BA8B9C00ABA49A /* ServerSecrets.swift in Sources */,
 				EA332F9224BEC26400ABA49A /* NetworkHelper.swift in Sources */,
 				EA332F6224BAADD900ABA49A /* GenericProductView.swift in Sources */,
@@ -610,6 +617,7 @@
 				EA332F4424BA729B00ABA49A /* AnimatedTabBarController.swift in Sources */,
 				EAB56D4824B9A0F7006A8225 /* CartItemsToProduct.swift in Sources */,
 				EA332F2C24BA6E1400ABA49A /* RESTHelper.swift in Sources */,
+				EA3A49F124C61ABB0049F8B1 /* CartUpdateDelegate.swift in Sources */,
 				EA332F3424BA6E6200ABA49A /* ColorPalette.swift in Sources */,
 				EA332FA224BEF28500ABA49A /* CartFooterView.swift in Sources */,
 			);
