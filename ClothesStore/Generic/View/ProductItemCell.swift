@@ -15,11 +15,11 @@ class ProductItemCell: UITableViewCell {
     @IBOutlet weak var addToWishlistButton: FaveButton!
     @IBOutlet weak var addToCartButton: UIButton!
 
+    var addedItemToWishList: (() -> ())?
+    var addedItemToCart: (() -> ())?
+
     func configure(isProductSoldOut: Bool) {
         configureAddToCartButton(isProductSoldOut, addToCartButton: addToCartButton)
-    }
-
-    func configureListeners() {
     }
 
     private func configureAddToCartButton(_ isSoldOut: Bool, addToCartButton: UIButton) {
@@ -29,9 +29,11 @@ class ProductItemCell: UITableViewCell {
 
     //TODO: Add listeners
     @IBAction func addedItemToWishlist(_ sender: Any) {
+        addedItemToWishList?()
     }
 
     @IBAction func addedItemToCart(_ sender: Any) {
+        addedItemToCart?()
     }
 
 }

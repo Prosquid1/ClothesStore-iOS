@@ -1,39 +1,39 @@
 //
-//  HomeController.swift
+//  WishListController.swift
+//  ClothesStore
 //
-//  Created by Oyeleke Okiki on 7/13/20.
+//  Created by Oyeleke Okiki on 7/20/20.
 //  Copyright © 2020 Personal. All rights reserved.
 //
 
 import UIKit
 
-class HomeController: BaseViewController {
-    private var homePresenter: DataSourcePresenter<Product>!
-    
+class WishListController: BaseViewController {
+
+    private var wishListPresenter: WishlistPresenter!
+
+    private func retreiveWishList() {
+        wishListPresenter.getWishListItems()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        homePresenter = DataSourcePresenter(dataControllerDelegate: self,
+        wishListPresenter = WishlistPresenter(dataControllerDelegate: self,
                                             cartUpdateDelegate: self)
         configureTableView()
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.title = "Home"
-        fetchData()
-    }
-
-    private func fetchData() {
-        homePresenter.refreshWishListIds()
-        homePresenter.retrieveData(path: "products")
+        self.tabBarController?.title = "My Wishlist"
+        retreiveWishList()
     }
 }
 
-extension HomeController: CartUpdateDelegate {
+extension WishListController: CartUpdateDelegate {
     func onCartUpdateSuccess(message: String) {
         showTopSuccessNote(message)
-        fetchData()
+        retreiveWishList()
     }
 
     func onCartUpdateFailed(reason: String) {
@@ -42,58 +42,56 @@ extension HomeController: CartUpdateDelegate {
 }
 
 
-extension HomeController: DataSourceDelegate {
+extension WishListController: DataSourceDelegate {
     func dataRetrieved<T>(data: [T]) {
         refreshViewForNewDataState()
     }
-    
+
     func didStartFetchingData() {
         _refreshControl.beginRefreshing()
     }
-    
+
     func dataIsEmpty() {
         refreshViewForNewDataState()
-        showTopErrorNote("No items available!")
+        showTopErrorNote("No items in wishlist!")
     }
-    
+
     func dataFetchingFailed(errorMessage: String) {
         _refreshControl.endRefreshing()
         showTopErrorNote(errorMessage)
     }
 }
 
-extension HomeController {
+extension WishListController {
     private func configureTableView() {
         tableView.register(UINib.init(nibName: "ProductItemCell", bundle: nil), forCellReuseIdentifier: ProductItemCell.identifier)
         refreshStarted = { [unowned self] in
-            self.fetchData()
+            self.retreiveWishList()
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return homePresenter.dataCount
+        return wishListPresenter.dataCount
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let productItemCell = tableView.dequeueReusableCell(withIdentifier: ProductItemCell.identifier) as! ProductItemCell
         productItemCell.selectionStyle = .none
-        let product = homePresenter.itemForRow(row: indexPath.row)
+        let product = wishListPresenter.itemForRow(row: indexPath.row)
         GenericViewConfigurator.configure(product: product, genericProductView:
             productItemCell.genericProductView)
-        productItemCell.addToWishlistButton.setSelected(selected: homePresenter.isItemInWishList(productId: product.id), animated: false)
+        productItemCell.addToWishlistButton.setSelected(selected: true, animated: false)
 
         productItemCell.addToCartButton.isEnabled = product.stock != 0
         productItemCell.addToCartButton.alpha = product.stock == 0 ? 0.4 : 1
 
         productItemCell.addedItemToCart = { [weak self] in
-            self?.homePresenter.addToCart(id: product.id)
+            self?.wishListPresenter.addToCart(id: product.id)
         }
 
         productItemCell.addedItemToWishList = { [weak self] in
-            productItemCell.addToWishlistButton.isSelected ?
-                self?.homePresenter.addToWishList(product: product):
-                self?.homePresenter.removeFromWishList(product: product)
-
+                self?.wishListPresenter.removeFromWishList(product: product)
+                self?.retreiveWishList()
         }
 
         return productItemCell

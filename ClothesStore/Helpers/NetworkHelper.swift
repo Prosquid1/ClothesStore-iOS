@@ -9,6 +9,11 @@
 import SwiftyJSON
 import Alamofire
 
+struct AddToCartResponse: Codable {
+    var message: String
+}
+struct CSEmptyResponse: Codable {}
+
 class NetworkHelper<T> where T: Codable {
     static func makeRequest(path: String,
                             method: HTTPMethod = .get,
@@ -21,9 +26,12 @@ class NetworkHelper<T> where T: Codable {
                    parameters: params,
                    encoding: URLEncoding(destination: .queryString),
                    headers: csRequestHeaders).validate().responseJSON { response in
-                    debugPrint(response)
                     switch response.result {
                     case .success:
+                        if (T.self == CSEmptyResponse.self) { //Empty response, no need to decode
+                            onSuccess(CSEmptyResponse() as! T)
+                            return
+                        }
                         do {
                             let data = try JSONDecoder().decode(T.self, from: response.data!)
                             onSuccess(data)

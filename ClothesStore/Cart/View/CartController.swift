@@ -10,26 +10,42 @@ import SwiftEntryKit
 
 class CartController: BaseViewController {
     
-    private var cartPresenter: CartDataSourcePresenter!
+    private var cartPresenter: CartPresenter!
     
     let cartFooterView = CartFooterView()
+    let cartFooterDummyView = UIView() //As opposed to instantiating everytime
     
     private func retreiveCart() {
         cartPresenter.retrieveData(path: "cart")
     }
     
     override func viewDidLoad() {
-        
-        self.tabBarController?.title = "My Cart"
-        cartPresenter = CartDataSourcePresenter(dataControllerDelegate: self,
-                                                cartProductsDelegate: self)
+        cartPresenter = CartPresenter(dataControllerDelegate: self,
+                                      cartUpdateDelegate: self,
+                                      cartProductsDelegate: self)
         super.viewDidLoad()
-        cartFooterView.isHidden = true
         configureTableView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.title = "My Cart"
         retreiveCart()
     }
 
 }
+
+extension CartController: CartUpdateDelegate {
+    func onCartUpdateSuccess(message: String) {
+        showTopSuccessNote(message)
+        retreiveCart()
+    }
+
+    func onCartUpdateFailed(reason: String) {
+        showTopErrorNote(reason)
+    }
+}
+
 
 //TableView extensions
 extension CartController {
@@ -49,18 +65,21 @@ extension CartController {
         cartItemCell.selectionStyle = .none
         let cartItemToProduct = cartPresenter.cartItemsToProductForRow(row: indexPath.row)
         GenericViewConfigurator.configure(product: cartItemToProduct.product, productsInCartCount: cartItemToProduct.cartItemIds.count, genericProductView: cartItemCell.genericProductView)
+        cartItemCell.removedItemFromCart = { [weak self] in
+            self?.cartPresenter.deleteFromCart(id: cartItemToProduct.cartItemIds.first ?? 0)
+        }
         return cartItemCell
     }
 
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return cartFooterView
+        return cartPresenter.dataCount == 0 ? cartFooterDummyView : cartFooterView
     }
     
 }
 
-extension CartController: DataControllerDelegate {
+extension CartController: DataSourceDelegate {
     func dataRetrieved<T>(data: [T]) {
-        cartPresenter.fetchProductsForMapping(cartItems: data as! [CartItem]) //Additional client-side processing since we cam't render a CartItem
+        cartPresenter.setProductsForMapping(cartItems: data as! [CartItem]) //Anti-pattern and additional client-side processing since we can't render a CartItem
     }
     
     func didStartFetchingData() {
@@ -68,27 +87,26 @@ extension CartController: DataControllerDelegate {
     }
     
     func dataIsEmpty() {
+        cartPresenter.setProductsForMapping(cartItems: []) //Anti-pattern and additional client-side processing since we can't render a CartItem
         refreshViewForNewDataState()
-        cartFooterView.isHidden = true
-        showTopErrorNote(message: "No items available!")
+        showTopErrorNote("No items available!")
     }
     
     func dataFetchingFailed(errorMessage: String) {
         _refreshControl.endRefreshing()
-        showTopErrorNote(message: errorMessage)
+        showTopErrorNote(errorMessage)
     }
 }
 
 extension CartController: CartProductsDelegate {
     func cartProductsRetrieved(data: [CartItemsToProduct]) {
-        cartFooterView.isHidden = false
         refreshViewForNewDataState()
     }
     
     func cartProductsFetchingFailed(errorMessage: String) {
         _refreshControl.endRefreshing()
-        cartFooterView.isHidden = true
-        showTopErrorNote(message: "No items available!")
+        refreshViewForNewDataState()
+        showTopErrorNote("No items available!")
     }
     func cartValueComputed(formattedValue: String) {
         cartFooterView.productTotalAmountLabel.text = formattedValue

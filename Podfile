@@ -7,6 +7,7 @@ target 'ClothesStore' do
   # Pods for ClothesStore
   pod 'Alamofire'
   pod 'FaveButton'
+  pod 'RealmSwift'
   pod 'SwiftEntryKit'
   pod 'SwiftyJSON'  
   pod 'ViewAnimator'

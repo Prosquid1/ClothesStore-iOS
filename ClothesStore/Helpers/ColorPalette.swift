@@ -17,6 +17,8 @@ struct ColorPalette {
     static let black: UIColor = UIColor(fromHex: 0x000000)
     static let dimGray: UIColor = UIColor(fromHex: 0x696969)
 
+    static let topNoteSuccessGreen: UIColor = UIColor(fromHex: 0x65D26E)
+
     static let green: UIColor = UIColor(fromHex: 0x009688)
     static let grey: UIColor = UIColor(fromHex: 0x808080)
 

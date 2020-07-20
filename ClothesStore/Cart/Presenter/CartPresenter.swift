@@ -1,5 +1,5 @@
 //
-//  CartDataSourcePresenter.swift
+//  CartPresenter.swift
 //  ClothesStore
 //
 //  Created by Oyeleke Okiki on 7/13/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CartDataSourcePresenter: DataSourcePresenter<CartItem> {
+class CartPresenter: DataSourcePresenter<CartItem> {
 
     private var cartItemsToProduct = [CartItemsToProduct]()
     var cartProductsDelegate: CartProductsDelegate?
@@ -17,17 +17,21 @@ class CartDataSourcePresenter: DataSourcePresenter<CartItem> {
         get { return cartItemsToProduct.count }
     }
     
-    init(dataControllerDelegate: DataControllerDelegate,
+    init(dataControllerDelegate: DataSourceDelegate,
+         cartUpdateDelegate: CartUpdateDelegate,
          cartProductsDelegate: CartProductsDelegate) {
-        super.init(dataControllerDelegate: dataControllerDelegate)
+        super.init(dataControllerDelegate: dataControllerDelegate,
+                   cartUpdateDelegate: cartUpdateDelegate)
         self.cartProductsDelegate = cartProductsDelegate
     }
     
-    required init(dataControllerDelegate: DataControllerDelegate) {
-        super.init(dataControllerDelegate: dataControllerDelegate)
+    required init(dataControllerDelegate: DataSourceDelegate,
+                  cartUpdateDelegate: CartUpdateDelegate) {
+        super.init(dataControllerDelegate: dataControllerDelegate,
+                   cartUpdateDelegate: cartUpdateDelegate)
     }
     
-    func fetchProductsForMapping(cartItems: [CartItem]) {
+    func setProductsForMapping(cartItems: [CartItem]) {
         NetworkHelper<[Product]>.makeRequest(path: "products", onSuccess: {
             [unowned self] products in
             if (products.isEmpty) {
@@ -50,7 +54,8 @@ class CartDataSourcePresenter: DataSourcePresenter<CartItem> {
 
         cartItemsToProduct = cartItemsGroupedByProduct.map{
             CartItemsToProduct(product: productIdToProductMap[$0.key]!, cartItemIds: $0.value.map {$0.id})
-        }
+        }.sorted(by: { $0.product.id > $1.product.id })
+        
         cartProductsDelegate?.cartProductsRetrieved(data: cartItemsToProduct)
         computeCartItemTotalValue(cartItemsToProduct)
     }
