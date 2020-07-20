@@ -31,7 +31,7 @@ class CartPresenter: DataSourcePresenter<CartItem> {
                    cartUpdateDelegate: cartUpdateDelegate)
     }
     
-    func fetchProductsForMapping(cartItems: [CartItem]) {
+    func setProductsForMapping(cartItems: [CartItem]) {
         NetworkHelper<[Product]>.makeRequest(path: "products", onSuccess: {
             [unowned self] products in
             if (products.isEmpty) {
@@ -54,7 +54,8 @@ class CartPresenter: DataSourcePresenter<CartItem> {
 
         cartItemsToProduct = cartItemsGroupedByProduct.map{
             CartItemsToProduct(product: productIdToProductMap[$0.key]!, cartItemIds: $0.value.map {$0.id})
-        }
+        }.sorted(by: { $0.product.id > $1.product.id })
+        
         cartProductsDelegate?.cartProductsRetrieved(data: cartItemsToProduct)
         computeCartItemTotalValue(cartItemsToProduct)
     }
