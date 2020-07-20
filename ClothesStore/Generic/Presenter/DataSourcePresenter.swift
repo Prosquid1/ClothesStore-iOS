@@ -9,10 +9,7 @@ import Foundation
 
 class DataSourcePresenter<T> where T: Codable {
     let wishlistManager: WishListDAO = WishlistDBManager()
-
-    private lazy var wishListIds = {
-        return wishlistManager.getWishListIds()
-    }()
+    private lazy var wishListIds: [Int] = []
 
     private var data = [T]()
 
@@ -37,39 +34,25 @@ class DataSourcePresenter<T> where T: Codable {
 
 //Database
 extension DataSourcePresenter {
-    func isItemInWishList(productId: Int) -> Bool {
-        wishListIds.contains(productId)
-    }
-
     func addToWishList(product: Product) {
         wishlistManager.addToWishList(it: product)
     }
 
+    func isItemInWishList(productId: Int) -> Bool {
+        wishListIds.contains(productId)
+    }
+
+    func refreshWishListIds() {
+        wishListIds = wishlistManager.getWishListIds()
+    }
+
     func removeFromWishList(product: Product) {
-        wishlistManager.removeFromWishList(product: product)
+        wishlistManager.removeFromWishList(productId: product.id)
     }
 }
 
 //Network
 extension DataSourcePresenter {
-    func retrieveData(path: String = "\(T.self)", params: [String: Any]? = nil) {
-        dataControllerDelegate.didStartFetchingData()
-
-        NetworkHelper<[T]>.makeRequest(path: path, onSuccess: {
-            [weak self] data in
-            if (data.isEmpty) {
-                self?.dataControllerDelegate.dataIsEmpty()
-                return
-            }
-
-            self?.data = data
-            self?.dataControllerDelegate.dataRetrieved(data: data)
-        }){ [weak self] errorMessage in
-            self?.dataControllerDelegate.dataFetchingFailed(errorMessage: errorMessage)
-
-        }
-    }
-
     func addToCart(id: Int) {
         NetworkHelper<AddToCartResponse>.makeRequest(path: "cart",
                                                      method: .post,
@@ -96,11 +79,31 @@ extension DataSourcePresenter {
         }
     }
 
+    func retrieveData(path: String = "\(T.self)", params: [String: Any]? = nil) {
+        dataControllerDelegate.didStartFetchingData()
+
+        NetworkHelper<[T]>.makeRequest(path: path, onSuccess: {
+            [weak self] data in
+
+            guard !data.isEmpty else {
+                self?.dataControllerDelegate.dataIsEmpty()
+                return
+            }
+
+            self?.data = data
+            self?.dataControllerDelegate.dataRetrieved(data: data)
+        }){ [weak self] errorMessage in
+            self?.dataControllerDelegate.dataFetchingFailed(errorMessage: errorMessage)
+
+        }
+    }
+
+
+
 }
 
 //UI source
 extension DataSourcePresenter {
-
     func setupUIWithFetch() {
         retrieveData()
     }
