@@ -6,18 +6,18 @@
 //  Copyright © 2020 Personal. All rights reserved.
 //
 
-import Unrealm
+import RealmSwift
 
-struct Product: Realmable, Codable
+class Product: Object, Codable
 {
-    var id: Int = 0
-    var name: String = ""
-    var category: String = ""
-    var price: String? = ""
-    var oldPrice: String? = ""
-    var stock: Int = 0
+    @objc dynamic var id: Int
+    @objc dynamic var name: String
+    @objc dynamic var category: String
+    @objc dynamic var price: String?
+    @objc dynamic var oldPrice: String?
+    @objc dynamic var stock: Int
 
-    static func primaryKey() -> String? {
+    override class func primaryKey() -> String? {
         return "id"
     }
 }

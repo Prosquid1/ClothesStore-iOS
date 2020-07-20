@@ -40,12 +40,9 @@ class WishlistDBManager: WishListDAO {
         }
     }
 
-    func removeFromWishList(productId: Int) {
+    func removeFromWishList(product: Product) {
         try? realm?.write {
-            let product = getWishListItemWith(productId: productId)
-            if let safeProduct = product {
-                realm?.delete(safeProduct)
-            }
+            realm?.delete(product)
         }
     }
 

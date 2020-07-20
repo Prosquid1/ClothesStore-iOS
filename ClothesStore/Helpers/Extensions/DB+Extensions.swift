@@ -6,17 +6,17 @@
 //  Copyright © 2020 Personal. All rights reserved.
 //
 
-import Unrealm
+import RealmSwift
 
 extension Results {
-    func toArray<T: Realmable>() -> [T] {
+    func toArray<T: Object>() -> [T] {
         var array = [T]()
-//        for i in 0 ..< count {
-//            if let result = self[i] as? T {
-//                array.append(result)
-//            }
-//        }
+        for i in 0 ..< count {
+            if let result = self[i] as? T {
+                array.append(result)
+            }
+        }
 
-        return []
+        return array
     }
 }

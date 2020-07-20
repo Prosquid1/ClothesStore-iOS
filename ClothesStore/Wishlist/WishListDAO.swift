@@ -21,7 +21,7 @@ protocol WishListDAO {
 
     func insertWishListProducts(it: [Product])
 
-    func removeFromWishList(productId: Int)
+    func removeFromWishList(product: Product)
 
     func decrementProductStockCount(productId: Int)
 

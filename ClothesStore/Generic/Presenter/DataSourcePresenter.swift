@@ -46,7 +46,7 @@ extension DataSourcePresenter {
     }
 
     func removeFromWishList(product: Product) {
-        wishlistManager.removeFromWishList(productId: product.id)
+        wishlistManager.removeFromWishList(product: product)
     }
 }
 
@@ -84,9 +84,9 @@ extension DataSourcePresenter {
     }
 
     func deleteFromCart(id: Int) {
-        NetworkHelper<CSEmptyRespone>.makeRequest(path: "cart",
+        NetworkHelper<CSEmptyResponse>.makeRequest(path: "cart",
                                                   method: .delete,
-                                                  params: ["productId": id],
+                                                  params: ["id": id],
                                                   onSuccess: {
                                                     [weak self] response in
                                                     self?.cartUpdateDelegate.onCartUpdateSuccess(message: "Deleted successfully!")
