@@ -10,10 +10,10 @@ import RealmSwift
 
 class Product: Object, Codable
 {
-    var id: Int
-    var name: String
-    var category: String
-    var price: String?
-    var oldPrice: String?
-    var stock: Int
+    @objc var id: Int
+    @objc var name: String
+    @objc var category: String
+    @objc var price: String?
+    @objc var oldPrice: String?
+    @objc var stock: Int
 }
