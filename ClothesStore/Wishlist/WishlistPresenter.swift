@@ -7,3 +7,23 @@
 //
 
 import Foundation
+
+class WishlistPresenter: DataSourcePresenter<Product> {
+    private lazy var wishList = {
+        return wishlistManager.getWishList()
+    }()
+    
+    override var dataCount: Int {
+        get { return wishList.count }
+    }
+
+    func getWishListItems() {
+        wishList = wishlistManager.getWishList()
+        if (wishList.isEmpty) {
+            dataControllerDelegate.dataIsEmpty()
+            return
+        }
+        dataControllerDelegate.dataRetrieved(data: wishList)
+    }
+}
+

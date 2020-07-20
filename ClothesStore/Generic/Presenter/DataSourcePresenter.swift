@@ -8,11 +8,13 @@
 import Foundation
 
 class DataSourcePresenter<T> where T: Codable {
-    private let wishlistManager: WishListDAO = WishlistDBManager()
+    let wishlistManager: WishListDAO = WishlistDBManager()
 
     private lazy var wishListIds = {
         return wishlistManager.getLiveWishListIds()
     }()
+
+    
 
     private var data = [T]()
 
