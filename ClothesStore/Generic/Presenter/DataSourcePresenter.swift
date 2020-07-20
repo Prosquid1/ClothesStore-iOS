@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 protocol DataControllerDelegate {
     func dataRetrieved<T>(data: [T])
     func didStartFetchingData()
@@ -14,17 +15,25 @@ protocol DataControllerDelegate {
     func dataFetchingFailed(errorMessage: String)
 }
 
+protocol CartUpdateDelegate {
+    func onCartUpdateSuccess(message: String)
+    func onCartUpdateFailed(reason: String)
+}
+
 class DataSourcePresenter<T> where T: Codable {
     private var data = [T]()
 
     let dataControllerDelegate: DataControllerDelegate
+    let cartUpdateDelegate: CartUpdateDelegate
 
     var dataCount: Int {
         get { return data.count }
     }
 
-    required init(dataControllerDelegate: DataControllerDelegate) {
+    required init(dataControllerDelegate: DataControllerDelegate,
+                  cartUpdateDelegate: CartUpdateDelegate ) {
         self.dataControllerDelegate = dataControllerDelegate
+        self.cartUpdateDelegate = cartUpdateDelegate
     }
 
     func setupUIWithFetch() {
@@ -49,6 +58,32 @@ class DataSourcePresenter<T> where T: Codable {
             self?.dataControllerDelegate.dataRetrieved(data: data)
         }){ [weak self] errorMessage in
             self?.dataControllerDelegate.dataFetchingFailed(errorMessage: errorMessage)
+
+        }
+    }
+
+    func addToCart(id: Int) {
+        NetworkHelper<String>.makeRequest(path: "cart",
+                                       method: .post,
+                                       params: ["productId": id],
+                                       onSuccess: {
+            [weak self] response in
+                                        self?.cartUpdateDelegate.onCartUpdateSuccess(message: response)
+        }){ [weak self] errorMessage in
+            self?.cartUpdateDelegate.onCartUpdateFailed(reason: errorMessage)
+
+        }
+    }
+
+    func deleteFromCart(id: Int) {
+        NetworkHelper<CSEmpty>.makeRequest(path: "cart",
+                                       method: .delete,
+                                       params: ["productId": id],
+                                       onSuccess: {
+            [weak self] response in
+                                        self?.cartUpdateDelegate.onCartUpdateSuccess(message: "Deleted successfully!")
+        }){ [weak self] errorMessage in
+            self?.cartUpdateDelegate.onCartUpdateFailed(reason: errorMessage)
 
         }
     }

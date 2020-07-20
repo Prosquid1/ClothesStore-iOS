@@ -9,6 +9,8 @@
 import SwiftyJSON
 import Alamofire
 
+struct CSEmpty: Codable {}
+
 class NetworkHelper<T> where T: Codable {
     static func makeRequest(path: String,
                             method: HTTPMethod = .get,
