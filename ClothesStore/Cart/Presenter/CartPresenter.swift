@@ -17,7 +17,7 @@ class CartPresenter: DataSourcePresenter<CartItem> {
         get { return cartItemsToProduct.count }
     }
     
-    init(dataControllerDelegate: DataControllerDelegate,
+    init(dataControllerDelegate: DataSourceDelegate,
          cartUpdateDelegate: CartUpdateDelegate,
          cartProductsDelegate: CartProductsDelegate) {
         super.init(dataControllerDelegate: dataControllerDelegate,
@@ -25,7 +25,7 @@ class CartPresenter: DataSourcePresenter<CartItem> {
         self.cartProductsDelegate = cartProductsDelegate
     }
     
-    required init(dataControllerDelegate: DataControllerDelegate,
+    required init(dataControllerDelegate: DataSourceDelegate,
                   cartUpdateDelegate: CartUpdateDelegate) {
         super.init(dataControllerDelegate: dataControllerDelegate,
                    cartUpdateDelegate: cartUpdateDelegate)

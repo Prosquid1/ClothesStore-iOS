@@ -71,7 +71,7 @@ extension CartController {
     
 }
 
-extension CartController: DataControllerDelegate {
+extension CartController: DataSourceDelegate {
     func dataRetrieved<T>(data: [T]) {
         cartPresenter.fetchProductsForMapping(cartItems: data as! [CartItem]) //Additional client-side processing since we cam't render a CartItem
     }
