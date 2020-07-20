@@ -29,24 +29,32 @@ class WishlistDBManager: WishListDAO {
     }
 
     func addToWishList(it: Product) {
-        realm?.add(it)
+        try? realm?.write {
+            realm?.add(it)
+        }
     }
 
     func insertWishListProducts(it: [Product]) {
-        realm?.add(it)
+        try? realm?.write {
+            realm?.add(it)
+        }
     }
 
     func removeFromWishList(productId: Int) {
-        let product = getWishListItemWith(productId: productId)
-        if let safeProduct = product {
-            realm?.delete(safeProduct)
+        try? realm?.write {
+            let product = getWishListItemWith(productId: productId)
+            if let safeProduct = product {
+                realm?.delete(safeProduct)
+            }
         }
     }
 
     func decrementProductStockCount(productId: Int) {
-        let product = getWishListItemWith(productId: productId)
-        if let safeProduct = product {
-            realm?.delete(safeProduct)
+        try? realm?.write {
+            let product = getWishListItemWith(productId: productId)
+            if let safeProduct = product {
+                realm?.delete(safeProduct)
+            }
         }
     }
 
