@@ -13,20 +13,23 @@ class CartController: BaseViewController {
     private var cartPresenter: CartPresenter!
     
     let cartFooterView = CartFooterView()
+    let cartFooterDummyView = UIView() //As opposed to instantiating everytime
     
     private func retreiveCart() {
         cartPresenter.retrieveData(path: "cart")
     }
     
     override func viewDidLoad() {
-        
-        self.tabBarController?.title = "My Cart"
         cartPresenter = CartPresenter(dataControllerDelegate: self,
                                       cartUpdateDelegate: self,
                                       cartProductsDelegate: self)
         super.viewDidLoad()
-        cartFooterView.isHidden = true
         configureTableView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.title = "My Cart"
         retreiveCart()
     }
 
@@ -69,14 +72,14 @@ extension CartController {
     }
 
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return cartFooterView
+        return cartPresenter.dataCount == 0 ? cartFooterDummyView : cartFooterView
     }
     
 }
 
 extension CartController: DataSourceDelegate {
     func dataRetrieved<T>(data: [T]) {
-        cartPresenter.fetchProductsForMapping(cartItems: data as! [CartItem]) //Additional client-side processing since we cam't render a CartItem
+        cartPresenter.setProductsForMapping(cartItems: data as! [CartItem]) //Anti-pattern and additional client-side processing since we can't render a CartItem
     }
     
     func didStartFetchingData() {
@@ -84,8 +87,8 @@ extension CartController: DataSourceDelegate {
     }
     
     func dataIsEmpty() {
+        cartPresenter.setProductsForMapping(cartItems: []) //Anti-pattern and additional client-side processing since we can't render a CartItem
         refreshViewForNewDataState()
-        cartFooterView.isHidden = true
         showTopErrorNote("No items available!")
     }
     
@@ -97,13 +100,12 @@ extension CartController: DataSourceDelegate {
 
 extension CartController: CartProductsDelegate {
     func cartProductsRetrieved(data: [CartItemsToProduct]) {
-        cartFooterView.isHidden = false
         refreshViewForNewDataState()
     }
     
     func cartProductsFetchingFailed(errorMessage: String) {
         _refreshControl.endRefreshing()
-        cartFooterView.isHidden = true
+        refreshViewForNewDataState()
         showTopErrorNote("No items available!")
     }
     func cartValueComputed(formattedValue: String) {
