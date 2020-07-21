@@ -78,7 +78,7 @@ extension WishListController {
         let productItemCell = tableView.dequeueReusableCell(withIdentifier: ProductItemCell.identifier) as! ProductItemCell
         productItemCell.selectionStyle = .none
         let product = wishListPresenter.itemForRow(row: indexPath.row)
-        GenericProductViewConfigurator.configure(product: product, genericProductView:
+        GenericProductViewConfigurator.configure(product: product, withItemsLeftText: false, genericProductView:
             productItemCell.genericProductView)
         productItemCell.addToWishlistButton.setSelected(selected: true, animated: false)
 

@@ -11,6 +11,7 @@ import UIKit
 class GenericProductViewConfigurator {
     static func configure(product: Product,
                           productsInCartCount: Int? = nil,
+                          withItemsLeftText: Bool = true,
                           genericProductView: GenericProductView) {
 
         if(genericProductView.productNameLabel == nil) { return }
@@ -23,16 +24,19 @@ class GenericProductViewConfigurator {
 
         let stockCountHelper = StockCountHelper.getCountType(count: product.stock)
 
+        configureSoldOutText(stockCountHelper == .none , soldOutLabel: genericProductView.productSoldOutText)
+        configureProductOldPrice(product.oldPrice,
+                                 oldPriceLabel: genericProductView.productOldPriceLabel, spacingConstraint: genericProductView.stockToPriceLabelsXt)
+
+        guard withItemsLeftText else {
+            return
+        }
+
         if (productsInCartCount != nil) {
             configureItemInCartCountLabel(productsInCartCount ?? 0, stockCountLabel: genericProductView.productStockCountLabel)
         } else {
             configureStockCountLabel(product.stock, stockCountHelper:stockCountHelper , stockCountLabel: genericProductView.productStockCountLabel)
         }
-
-
-        configureSoldOutText(stockCountHelper == .none , soldOutLabel: genericProductView.productSoldOutText)
-        configureProductOldPrice(product.oldPrice,
-                                 oldPriceLabel: genericProductView.productOldPriceLabel, spacingConstraint: genericProductView.stockToPriceLabelsXt)
     }
 
     private static func configureItemInCartCountLabel(_ count: Int, stockCountLabel: UILabel) {
