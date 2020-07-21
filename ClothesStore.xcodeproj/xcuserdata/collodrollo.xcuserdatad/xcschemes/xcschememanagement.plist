@@ -7,7 +7,25 @@
 		<key>ClothesStore.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>8</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>EAB56D0924B72CD3006A8225</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EAB56D1F24B72CD4006A8225</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EAB56D2A24B72CD5006A8225</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

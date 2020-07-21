@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="474" id="P9T-vR-Zyz" customClass="ProductItemCell" customModule="ClothesStore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="661" height="474"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P9T-vR-Zyz" id="wFo-kg-fZb">
+                <rect key="frame" x="0.0" y="0.0" width="661" height="474"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZw-hA-tOx" customClass="GenericProductView" customModule="ClothesStore" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="591" height="474"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="znj-3a-F0T">
+                        <rect key="frame" x="611" y="210" width="40" height="54"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0H-8K-ldj" customClass="FaveButton" customModule="FaveButton">
+                                <rect key="frame" x="9" y="0.0" width="22" height="22"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="k0H-8K-ldj" secondAttribute="height" id="3dO-jc-yVv"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="star.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="regular"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                        <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="dotSecondColor">
+                                        <color key="value" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="dotFirstColor">
+                                        <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addedItemToWishlist:" destination="P9T-vR-Zyz" eventType="touchUpInside" id="uHO-a4-sQP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Y4-nC-46I">
+                                <rect key="frame" x="0.0" y="32" width="40" height="22"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Im2-Uw-841"/>
+                                    <constraint firstAttribute="height" constant="22" id="u3G-pR-6zv"/>
+                                </constraints>
+                                <color key="tintColor" name="primaryColor"/>
+                                <state key="normal" image="cart.badge.plus" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="addedItemToCart:" destination="P9T-vR-Zyz" eventType="touchUpInside" id="u60-7c-hCR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="WA7-Cy-104"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hZw-hA-tOx" firstAttribute="centerY" secondItem="wFo-kg-fZb" secondAttribute="centerY" id="9wh-AA-ek9"/>
+                    <constraint firstAttribute="trailing" secondItem="znj-3a-F0T" secondAttribute="trailing" constant="10" id="JLc-b6-KWx"/>
+                    <constraint firstAttribute="bottom" secondItem="hZw-hA-tOx" secondAttribute="bottom" id="L6Q-uJ-Pmr"/>
+                    <constraint firstItem="hZw-hA-tOx" firstAttribute="top" secondItem="wFo-kg-fZb" secondAttribute="top" id="OEJ-FG-qYh"/>
+                    <constraint firstItem="znj-3a-F0T" firstAttribute="leading" secondItem="hZw-hA-tOx" secondAttribute="trailing" constant="20" id="Psu-nB-3R4"/>
+                    <constraint firstItem="znj-3a-F0T" firstAttribute="centerY" secondItem="wFo-kg-fZb" secondAttribute="centerY" id="dHb-oz-UNH"/>
+                    <constraint firstItem="hZw-hA-tOx" firstAttribute="leading" secondItem="wFo-kg-fZb" secondAttribute="leading" id="xoL-GT-6kH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addToCartButton" destination="5Y4-nC-46I" id="fBC-w3-zq1"/>
+                <outlet property="addToWishlistButton" destination="k0H-8K-ldj" id="zh7-yy-fqC"/>
+                <outlet property="genericProductView" destination="hZw-hA-tOx" id="Lfd-h6-HcU"/>
+            </connections>
+            <point key="canvasLocation" x="189.13043478260872" y="644.19642857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="cart.badge.plus" catalog="system" width="64" height="48"/>
+        <image name="star.fill" catalog="system" width="64" height="58"/>
+        <namedColor name="primaryColor">
+            <color red="0.47450980392156861" green="0.33333333333333331" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
