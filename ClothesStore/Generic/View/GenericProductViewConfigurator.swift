@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GenericViewConfigurator {
+class GenericProductViewConfigurator {
     static func configure(product: Product,
                           productsInCartCount: Int? = nil,
                           genericProductView: GenericProductView) {

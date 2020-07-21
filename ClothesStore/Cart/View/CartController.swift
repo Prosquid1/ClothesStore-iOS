@@ -64,7 +64,7 @@ extension CartController {
         let cartItemCell = tableView.dequeueReusableCell(withIdentifier: CartItemCell.identifier) as! CartItemCell
         cartItemCell.selectionStyle = .none
         let cartItemToProduct = cartPresenter.cartItemsToProductForRow(row: indexPath.row)
-        GenericViewConfigurator.configure(product: cartItemToProduct.product, productsInCartCount: cartItemToProduct.cartItemIds.count, genericProductView: cartItemCell.genericProductView)
+        GenericProductViewConfigurator.configure(product: cartItemToProduct.product, productsInCartCount: cartItemToProduct.cartItemIds.count, genericProductView: cartItemCell.genericProductView)
         cartItemCell.removedItemFromCart = { [weak self] in
             self?.cartPresenter.deleteFromCart(id: cartItemToProduct.cartItemIds.first ?? 0)
         }
