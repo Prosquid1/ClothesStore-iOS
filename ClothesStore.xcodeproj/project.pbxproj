@@ -43,9 +43,9 @@
 		EA332F7324BB0FDF00ABA49A /* AnimationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F7224BB0FDF00ABA49A /* AnimationUtils.swift */; };
 		EA332F7424BB0FDF00ABA49A /* AnimationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F7224BB0FDF00ABA49A /* AnimationUtils.swift */; };
 		EA332F7524BB0FDF00ABA49A /* AnimationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F7224BB0FDF00ABA49A /* AnimationUtils.swift */; };
-		EA332F7724BB108600ABA49A /* GenericViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F7624BB108600ABA49A /* GenericViewConfigurator.swift */; };
-		EA332F7824BB108600ABA49A /* GenericViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F7624BB108600ABA49A /* GenericViewConfigurator.swift */; };
-		EA332F7924BB108600ABA49A /* GenericViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F7624BB108600ABA49A /* GenericViewConfigurator.swift */; };
+		EA332F7724BB108600ABA49A /* GenericProductViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F7624BB108600ABA49A /* GenericProductViewConfigurator.swift */; };
+		EA332F7824BB108600ABA49A /* GenericProductViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F7624BB108600ABA49A /* GenericProductViewConfigurator.swift */; };
+		EA332F7924BB108600ABA49A /* GenericProductViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F7624BB108600ABA49A /* GenericProductViewConfigurator.swift */; };
 		EA332F7B24BC94C600ABA49A /* StockCountHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F7A24BC94C600ABA49A /* StockCountHelper.swift */; };
 		EA332F8624BCA22400ABA49A /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8524BCA22400ABA49A /* HomeController.swift */; };
 		EA332F8724BCA22400ABA49A /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F8524BCA22400ABA49A /* HomeController.swift */; };
@@ -130,7 +130,7 @@
 		EA332F6924BAB86600ABA49A /* ProductItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductItemCell.xib; path = ClothesStore/Generic/ProductItemCell.xib; sourceTree = SOURCE_ROOT; };
 		EA332F6D24BB07D500ABA49A /* UIViewController+EntryKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+EntryKit.swift"; sourceTree = "<group>"; };
 		EA332F7224BB0FDF00ABA49A /* AnimationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUtils.swift; sourceTree = "<group>"; };
-		EA332F7624BB108600ABA49A /* GenericViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewConfigurator.swift; sourceTree = "<group>"; };
+		EA332F7624BB108600ABA49A /* GenericProductViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericProductViewConfigurator.swift; sourceTree = "<group>"; };
 		EA332F7A24BC94C600ABA49A /* StockCountHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCountHelper.swift; sourceTree = "<group>"; };
 		EA332F8524BCA22400ABA49A /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		EA332F8924BCA7B100ABA49A /* CSFavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSFavButton.swift; sourceTree = "<group>"; };
@@ -283,7 +283,7 @@
 		EA3A49EB24C5B7860049F8B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EA332F7624BB108600ABA49A /* GenericViewConfigurator.swift */,
+				EA332F7624BB108600ABA49A /* GenericProductViewConfigurator.swift */,
 				EA332F5D24BAAD3800ABA49A /* GenericProductView.xib */,
 				EA332F6124BAADD900ABA49A /* GenericProductView.swift */,
 				EA332F5524BA87AC00ABA49A /* ProductItemCell.swift */,
@@ -594,7 +594,7 @@
 				EAB56D5A24B9B427006A8225 /* ColorUtils.swift in Sources */,
 				EA332F8624BCA22400ABA49A /* HomeController.swift in Sources */,
 				EA332F4024BA6F4700ABA49A /* BaseViewController.swift in Sources */,
-				EA332F7724BB108600ABA49A /* GenericViewConfigurator.swift in Sources */,
+				EA332F7724BB108600ABA49A /* GenericProductViewConfigurator.swift in Sources */,
 				EA332F9E24BEE86200ABA49A /* CartItemCell.swift in Sources */,
 				EA3A49E224C4AD4A0049F8B1 /* DB+Extensions.swift in Sources */,
 				EAB56D5024B9A4F9006A8225 /* String+Extensions.swift in Sources */,
@@ -640,7 +640,7 @@
 				EA3A49E524C4B0040049F8B1 /* WishlistPresenter.swift in Sources */,
 				EA332F3524BA6E6200ABA49A /* ColorPalette.swift in Sources */,
 				EA332F4F24BA813100ABA49A /* DataSourcePresenter.swift in Sources */,
-				EA332F7824BB108600ABA49A /* GenericViewConfigurator.swift in Sources */,
+				EA332F7824BB108600ABA49A /* GenericProductViewConfigurator.swift in Sources */,
 				EA332F4124BA6F4700ABA49A /* BaseViewController.swift in Sources */,
 				EA332F9324BEC26400ABA49A /* NetworkHelper.swift in Sources */,
 				EA332F6324BAADD900ABA49A /* GenericProductView.swift in Sources */,
@@ -667,7 +667,7 @@
 				EA3A49E624C4B0040049F8B1 /* WishlistPresenter.swift in Sources */,
 				EA332F3624BA6E6200ABA49A /* ColorPalette.swift in Sources */,
 				EA332F5024BA813100ABA49A /* DataSourcePresenter.swift in Sources */,
-				EA332F7924BB108600ABA49A /* GenericViewConfigurator.swift in Sources */,
+				EA332F7924BB108600ABA49A /* GenericProductViewConfigurator.swift in Sources */,
 				EA332F4224BA6F4700ABA49A /* BaseViewController.swift in Sources */,
 				EA332F9424BEC26400ABA49A /* NetworkHelper.swift in Sources */,
 				EA332F6424BAADD900ABA49A /* GenericProductView.swift in Sources */,

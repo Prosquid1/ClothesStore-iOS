@@ -78,9 +78,19 @@ extension HomeController {
         let productItemCell = tableView.dequeueReusableCell(withIdentifier: ProductItemCell.identifier) as! ProductItemCell
         productItemCell.selectionStyle = .none
         let product = homePresenter.itemForRow(row: indexPath.row)
-        GenericViewConfigurator.configure(product: product, genericProductView:
+        GenericProductViewConfigurator.configure(product: product, genericProductView:
             productItemCell.genericProductView)
-        productItemCell.addToWishlistButton.setSelected(selected: homePresenter.isItemInWishList(productId: product.id), animated: false)
+
+        //There is an issue with using setSelected and the library's default icon color, hence the logic below
+        //Calling isSelected maiantains the default icon color but will enable the star animation every time cell is rendered
+
+        let itemInWishList = homePresenter.isItemInWishList(productId: product.id)
+        if (itemInWishList) {
+            productItemCell.addToWishlistButton.setSelected(selected: true, animated: false)
+        } else {
+            productItemCell.addToWishlistButton.isSelected = false
+        }
+
 
         productItemCell.addToCartButton.isEnabled = product.stock != 0
         productItemCell.addToCartButton.alpha = product.stock == 0 ? 0.4 : 1
