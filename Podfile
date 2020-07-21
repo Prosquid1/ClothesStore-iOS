@@ -1,14 +1,34 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+use_frameworks!
 
-target 'ClothesStore' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-  # Pods for ClothesStore
+def modelWithDBPods
   pod 'Alamofire'
-  pod 'FaveButton'
   pod 'RealmSwift'
+end
+
+def sharedUIPods
+  pod 'FaveButton'
   pod 'SwiftEntryKit'
-  pod 'SwiftyJSON'  
+  pod 'SwiftyJSON'
   pod 'ViewAnimator'
 end
+
+# Pods for ClothesStore
+target 'ClothesStore' do
+  modelWithDBPods
+  sharedUIPods
+end
+
+# Pods for ClothesStoreTests
+target 'ClothesStoreTests' do
+  modelWithDBPods
+end
+
+# Pods for ClothesStoreUITests
+target 'ClothesStoreUITests' do
+  modelWithDBPods
+  sharedUIPods
+end
+
+
+
