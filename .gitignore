@@ -9,9 +9,6 @@
 build/
 DerivedData/
 
-## API secrets
-ServerSecrets.swift
-
 ## Various settings
 *.pbxuser
 !default.pbxuser
