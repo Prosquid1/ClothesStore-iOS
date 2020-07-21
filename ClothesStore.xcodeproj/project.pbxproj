@@ -96,6 +96,7 @@
 		EA68E1AA24C7558200B78B59 /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F3724BA6EA900ABA49A /* CartController.swift */; };
 		EA68E1AB24C7563900B78B59 /* CartFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332FA124BEF28500ABA49A /* CartFooterView.swift */; };
 		EA68E1AC24C7564A00B78B59 /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA332F9D24BEE86200ABA49A /* CartItemCell.swift */; };
+		EA68E1AE24C7579900B78B59 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA68E1AD24C7579900B78B59 /* UIColor+Extensions.swift */; };
 		EAB56D0E24B72CD3006A8225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */; };
 		EAB56D1524B72CD3006A8225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1324B72CD3006A8225 /* Main.storyboard */; };
 		EAB56D1724B72CD4006A8225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB56D1624B72CD4006A8225 /* Assets.xcassets */; };
@@ -174,6 +175,7 @@
 		EA3A49F024C61ABB0049F8B1 /* CartUpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartUpdateDelegate.swift; sourceTree = "<group>"; };
 		EA3A49F224C61C550049F8B1 /* WishListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListController.swift; sourceTree = "<group>"; };
 		EA68E18C24C712D200B78B59 /* ServerSecrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSecrets.swift; sourceTree = "<group>"; };
+		EA68E1AD24C7579900B78B59 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		EAB56D0A24B72CD3006A8225 /* ClothesStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClothesStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB56D0D24B72CD3006A8225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAB56D1424B72CD3006A8225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -247,10 +249,11 @@
 		EA332F7124BB0B9E00ABA49A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EA3A49E124C4AD4A0049F8B1 /* DB+Extensions.swift */,
 				EAB56D4F24B9A4F9006A8225 /* String+Extensions.swift */,
 				EA332F4B24BA7D9E00ABA49A /* UI+Extensions.swift */,
+				EA68E1AD24C7579900B78B59 /* UIColor+Extensions.swift */,
 				EA332F6D24BB07D500ABA49A /* UIViewController+EntryKit.swift */,
-				EA3A49E124C4AD4A0049F8B1 /* DB+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				EA332F4024BA6F4700ABA49A /* BaseViewController.swift in Sources */,
 				EA332F7724BB108600ABA49A /* GenericProductViewConfigurator.swift in Sources */,
 				EA332F9E24BEE86200ABA49A /* CartItemCell.swift in Sources */,
+				EA68E1AE24C7579900B78B59 /* UIColor+Extensions.swift in Sources */,
 				EA3A49E224C4AD4A0049F8B1 /* DB+Extensions.swift in Sources */,
 				EAB56D5024B9A4F9006A8225 /* String+Extensions.swift in Sources */,
 				EA3A49F324C61C550049F8B1 /* WishListController.swift in Sources */,
