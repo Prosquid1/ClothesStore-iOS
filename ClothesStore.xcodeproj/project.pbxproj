@@ -246,8 +246,8 @@
 		EA332FA924C1A22A00ABA49A /* Wishlist */ = {
 			isa = PBXGroup;
 			children = (
-				EA332FA724C19F9F00ABA49A /* WishlistDBManager.swift */,
 				EA332FAA24C1A24900ABA49A /* WishListDAO.swift */,
+				EA332FA724C19F9F00ABA49A /* WishlistDBManager.swift */,
 				EA3A49E324C4B0040049F8B1 /* WishlistPresenter.swift */,
 				EA3A49F224C61C550049F8B1 /* WishListController.swift */,
 			);
@@ -326,6 +326,27 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		EAA5279224C7FFFA00DA907D /* UI+Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EA332F7224BB0FDF00ABA49A /* AnimationUtils.swift */,
+				EA332F3324BA6E6200ABA49A /* ColorPalette.swift */,
+				EAB56D5924B9B427006A8225 /* ColorUtils.swift */,
+				EA332F8924BCA7B100ABA49A /* CSFavButton.swift */,
+			);
+			path = "UI+Helpers";
+			sourceTree = "<group>";
+		};
+		EAA5279324C8001200DA907D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				EA332F9124BEC26400ABA49A /* NetworkHelper.swift */,
+				EA332F2B24BA6E1400ABA49A /* RESTHelper.swift */,
+				EA68E18C24C712D200B78B59 /* ServerSecrets.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		EAB56D0124B72CD3006A8225 = {
 			isa = PBXGroup;
 			children = (
@@ -398,13 +419,8 @@
 			isa = PBXGroup;
 			children = (
 				EA332F7124BB0B9E00ABA49A /* Extensions */,
-				EA332F7224BB0FDF00ABA49A /* AnimationUtils.swift */,
-				EA332F3324BA6E6200ABA49A /* ColorPalette.swift */,
-				EAB56D5924B9B427006A8225 /* ColorUtils.swift */,
-				EA332F8924BCA7B100ABA49A /* CSFavButton.swift */,
-				EA332F9124BEC26400ABA49A /* NetworkHelper.swift */,
-				EA332F2B24BA6E1400ABA49A /* RESTHelper.swift */,
-				EA68E18C24C712D200B78B59 /* ServerSecrets.swift */,
+				EAA5279324C8001200DA907D /* Networking */,
+				EAA5279224C7FFFA00DA907D /* UI+Helpers */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
