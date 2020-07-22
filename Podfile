@@ -19,11 +19,6 @@ target 'ClothesStore' do
   sharedUIPods
 end
 
-# Pods for ClothesStoreTests
-target 'ClothesStoreTests' do
-  modelPods
-end
-
 # Pods for ClothesStoreUITests
 target 'ClothesStoreUITests' do
   modelPods

@@ -8,14 +8,18 @@
 import RealmSwift
 
 protocol WishListDAO {
+
+    func addToWishList(it: Product)
+
+    func deleteAll()
+
+    func getWishList() -> [Product]
+
     func getWishListIds() -> [Int]
 
     func getWishListItemWith(productId: Int) -> Product?
 
-    func addToWishList(it: Product)
-
     func removeFromWishList(productId: Int)
 
-    func getWishList() -> [Product]
 }
 
