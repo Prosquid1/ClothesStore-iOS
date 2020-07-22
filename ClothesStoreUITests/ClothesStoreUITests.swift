@@ -11,27 +11,45 @@
 import XCTest
 
 class ClothesStoreUITests: XCTestCase {
+    var app: XCUIApplication!
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = true
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app = XCUIApplication()
+        app.activate()
+        continueAfterFailure = false
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testHomeHasItems() {
+        XCTAssert(app.tables.cells.count != 0)
     }
 
-    func testExample() {
-        // UI tests must launch the application that they test.
+    func testWishListHasChanged() {
+        let tabBarsQuery = app.tabBars
+        let myWishlistButton = tabBarsQuery.buttons["My Wishlist"]
+        myWishlistButton.tap()
+        let initialWishListItemCount = app.tables.cells.count
+        tabBarsQuery.buttons["Home"].tap()
+        
+        app.tables/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"£99.00").buttons["SaveProductToCartId"]/*[[".cells.containing(.staticText, identifier:\"Almond Toe Court Shoes, Patent Black\")",".buttons[\"Save Product To Cart\"]",".buttons[\"SaveProductToCartId\"]",".cells.containing(.staticText, identifier:\"£99.00\")"],[[[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/.tap()
+        myWishlistButton.tap()
+        XCTAssert(app.tables.cells.count != initialWishListItemCount)
+    }
+
+    // As long as AddItemToCartId can be tapped, cell count can never be 0
+    func testCartHasChanged() {
+
         let app = XCUIApplication()
-        app.launch()
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Home"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery.cells.containing(.staticText, identifier:"Almond Toe Court Shoes, Patent Black")/*@START_MENU_TOKEN@*/.buttons["AddItemToCartId"]/*[[".buttons[\"Add Item to Cart\"]",".buttons[\"AddItemToCartId\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery.cells.containing(.staticText, identifier:"Suede Shoes, Blue")/*@START_MENU_TOKEN@*/.buttons["AddItemToCartId"]/*[[".buttons[\"Add Item to Cart\"]",".buttons[\"AddItemToCartId\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        tabBarsQuery.buttons["My Cart"].tap()
+
+        XCTAssert(app.tables.cells.count > 0)
+
     }
 
     func testLaunchPerformance() {

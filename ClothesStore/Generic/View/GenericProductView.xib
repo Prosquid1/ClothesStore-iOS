@@ -70,6 +70,9 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkE-nG-zVc">
                                     <rect key="frame" x="0.0" y="2" width="33" height="16"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <accessibility key="accessibilityConfiguration">
+                                        <bool key="isElement" value="NO"/>
+                                    </accessibility>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -77,6 +80,9 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxP-sc-Tmt">
                                     <rect key="frame" x="38" y="10" width="0.0" height="0.0"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <accessibility key="accessibilityConfiguration">
+                                        <bool key="isElement" value="NO"/>
+                                    </accessibility>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                     <nil key="highlightedColor"/>
@@ -84,6 +90,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBR-Wv-ycX">
                                     <rect key="frame" x="43" y="10" width="0.0" height="0.0"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <accessibility key="accessibilityConfiguration" hint="Amount of products left" identifier="ProductStockCountId" label="Product stock count"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
