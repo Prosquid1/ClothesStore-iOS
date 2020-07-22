@@ -18,6 +18,6 @@ struct ServerSecrets {
 
 ```
 
-The private keys above can be provided by Melissa Morgan
+The private keys above can be provided by Melissa.
 
 - Theme was customized by a free tool called [MaterialPalette](https://www.materialpalette.com/brown/grey)
