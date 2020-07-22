@@ -11,24 +11,24 @@ import RealmSwift
 class WishlistDBManager: WishListDAO {
     private let realm = try? Realm()
 
-    func getWishListIds() -> [Int] {
-        getWishList().map { $0.id }
-    }
-
-    func getWishListItemWith(productId: Int) -> Product? {
-        return realm?.object(ofType: Product.self, forPrimaryKey: productId)
-    }
-
     func addToWishList(it: Product) {
         try? realm?.write {
             realm?.create(Product.self, value: it, update: .all)
         }
     }
 
-    func insertWishListProducts(it: [Product]) {
+    func deleteAll() {
         try? realm?.write {
-            realm?.add(it)
+            realm?.deleteAll()
         }
+    }
+
+    func getWishListIds() -> [Int] {
+        getWishList().map { $0.id }
+    }
+
+    func getWishListItemWith(productId: Int) -> Product? {
+        return realm?.object(ofType: Product.self, forPrimaryKey: productId)
     }
 
     func removeFromWishList(productId: Int) {
