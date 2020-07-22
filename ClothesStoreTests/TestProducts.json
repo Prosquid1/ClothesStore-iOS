@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "name": "name",
+    "category": "category",
+    "price": "price",
+    "oldPrice": "oldPrice",
+    "stock": 100
+  }
+]

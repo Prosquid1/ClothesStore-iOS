@@ -26,6 +26,7 @@
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0H-8K-ldj" customClass="FaveButton" customModule="FaveButton">
                                 <rect key="frame" x="9" y="0.0" width="22" height="22"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" hint="Saves Product To Cart" identifier="SaveProductToCartId" label="Save Product To Cart"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="k0H-8K-ldj" secondAttribute="height" id="3dO-jc-yVv"/>
                                 </constraints>
@@ -54,6 +55,7 @@
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Y4-nC-46I">
                                 <rect key="frame" x="0.0" y="32" width="40" height="22"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" hint="Add Item to Cart" identifier="AddItemToCartId" label="Add Item to Cart"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Im2-Uw-841"/>
                                     <constraint firstAttribute="height" constant="22" id="u3G-pR-6zv"/>

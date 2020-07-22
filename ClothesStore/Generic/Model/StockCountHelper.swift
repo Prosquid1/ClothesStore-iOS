@@ -6,22 +6,10 @@
 //  Copyright © 2020 Personal. All rights reserved.
 //
 
-import UIKit
-
-enum StockCountHelper {
+public enum StockCountHelper {
     case none
     case low
     case high
-
-    var colorValue: UIColor {
-        get {
-            switch self {
-            case .none: return ColorPalette.red
-            case .low: return ColorPalette.green
-            case .high: return ColorPalette.moneyBlue
-            }
-        }
-    }
 
     var isSoldOut: Bool {
         if (self == .none) { return false }

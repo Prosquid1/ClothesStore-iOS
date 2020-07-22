@@ -23,6 +23,7 @@
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdV-38-yhc">
                         <rect key="frame" x="614.5" y="217" width="40" height="40"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" hint="Removes Product from Cart" identifier="RemoveProductFromCartId" label="Remove Product from Cart"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="4FV-rh-yAT"/>
                             <constraint firstAttribute="height" constant="40" id="73f-Bs-t52"/>
