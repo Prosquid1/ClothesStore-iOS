@@ -1,32 +1,32 @@
 # Uncomment the next line to define a global platform for your project
 use_frameworks!
 
-def modelWithDBPods
+def modelPods
   pod 'Alamofire'
   pod 'RealmSwift'
+  pod 'SwiftyJSON'
 end
 
 def sharedUIPods
   pod 'FaveButton'
   pod 'SwiftEntryKit'
-  pod 'SwiftyJSON'
   pod 'ViewAnimator'
 end
 
 # Pods for ClothesStore
 target 'ClothesStore' do
-  modelWithDBPods
+  modelPods
   sharedUIPods
 end
 
 # Pods for ClothesStoreTests
 target 'ClothesStoreTests' do
-  modelWithDBPods
+  modelPods
 end
 
 # Pods for ClothesStoreUITests
 target 'ClothesStoreUITests' do
-  modelWithDBPods
+  modelPods
   sharedUIPods
 end
 

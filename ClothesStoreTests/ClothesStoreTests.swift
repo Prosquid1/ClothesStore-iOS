@@ -14,12 +14,12 @@ class ClothesStoreTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 
-        let product = Product()
-        product.id = 1
-        let genericProductView = GenericProductView()
-        GenericProductViewConfigurator.configure(product: product, genericProductView: genericProductView )
+//        let product = Product(from: <#Decoder#>)
+//        product.id = 1
+//        let genericProductView = GenericProductView()
+//        GenericProductViewConfigurator.configure(product: product, genericProductView: genericProductView )
 
-        XCTAssert(product.id == 1)
+        //XCTAssert(product.id == 1)
     }
 
     func testPerformanceExample() {

@@ -25,3 +25,15 @@ extension UIColor {
         )
     }
 }
+
+extension StockCountHelper {
+    var colorValue: UIColor {
+        get {
+            switch self {
+            case .none: return ColorPalette.red
+            case .low: return ColorPalette.green
+            case .high: return ColorPalette.moneyBlue
+            }
+        }
+    }
+}
