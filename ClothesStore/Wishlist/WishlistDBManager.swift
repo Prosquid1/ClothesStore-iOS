@@ -31,12 +31,6 @@ class WishlistDBManager: WishListDAO {
         return realm?.object(ofType: Product.self, forPrimaryKey: productId)
     }
 
-    func insertWishListProducts(it: [Product]) {
-        try? realm?.write {
-            realm?.add(it)
-        }
-    }
-
     func removeFromWishList(productId: Int) {
         try? realm?.write {
             let product = getWishListItemWith(productId: productId)

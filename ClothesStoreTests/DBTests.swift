@@ -35,6 +35,24 @@ class DBTests: XCTestCase {
         XCTAssert(product.id == retrievedProduct!.id)
     }
 
+    // This can also serve as a test for wishlist count
+    func testDatabaseIsAtomic() {
+        wishlistDBManager.addToWishList(it: product)
+        wishlistDBManager.addToWishList(it: product)
+        wishlistDBManager.addToWishList(it: product)
+
+        let wishlistCount = wishlistDBManager.getWishListCount()
+        XCTAssert(wishlistCount == 1)
+    }
+
+    func testProductDeletion() {
+        wishlistDBManager.addToWishList(it: product)
+        wishlistDBManager.deleteAll()
+
+        let wishlist = wishlistDBManager.getWishList()
+        XCTAssert(wishlist.isEmpty)
+    }
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
