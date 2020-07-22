@@ -85,6 +85,7 @@ extension WishListController {
         productItemCell.addToCartButton.isEnabled = product.stock != 0
         productItemCell.addToCartButton.alpha = product.stock == 0 ? 0.4 : 1
 
+
         productItemCell.addedItemToCart = { [weak self] in
             self?.wishListPresenter.addToCart(id: product.id)
         }

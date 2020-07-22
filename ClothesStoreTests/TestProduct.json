@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "name": "Test Product",
+  "category": "Test Category",
+  "price": "price",
+  "oldPrice": "oldPrice",
+  "stock": 100
+}

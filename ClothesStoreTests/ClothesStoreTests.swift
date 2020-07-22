@@ -7,19 +7,22 @@
 //
 
 import XCTest
+
 @testable import ClothesStore
 
 class ClothesStoreTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    var product: Product!
+    
+    override func setUp() {
+        let bundle = Bundle(for: type(of: self))
+        let url = bundle.url(forResource: "TestProduct", withExtension: "json")!
+        let exampleJSONData = try! Data(contentsOf: url)
+        let decoder = JSONDecoder()
+        product = try! decoder.decode(Product.self, from: exampleJSONData)
 
-//        let product = Product(from: <#Decoder#>)
-//        product.id = 1
-//        let genericProductView = GenericProductView()
-//        GenericProductViewConfigurator.configure(product: product, genericProductView: genericProductView )
-
-        //XCTAssert(product.id == 1)
+    }
+    func testDecodedProduct() {
+        XCTAssert(product.id == 1 && product.name == "Test Product")
     }
 
     func testPerformanceExample() {
