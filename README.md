@@ -21,3 +21,7 @@ struct ServerSecrets {
 The private keys above can be provided by Melissa.
 
 - Theme was customized by a free tool called [MaterialPalette](https://www.materialpalette.com/brown/grey)
+
+
+#### Note:
+The backend was designed in a way that requests had to be chained, hence the refresh after certain GET/POST requests
